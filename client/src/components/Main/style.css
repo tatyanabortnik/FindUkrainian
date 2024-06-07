@@ -1,0 +1,7 @@
+.title {
+  padding: 1em 0;
+}
+
+.main__info {
+  display: flex;
+}

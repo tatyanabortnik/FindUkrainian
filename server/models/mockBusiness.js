@@ -1,0 +1,98 @@
+[
+  {
+    name: 'Ukrainian Delight',
+    address: 'Hohenzollernring 123, 50672 Köln',
+    category: 'Restaurants',
+    description: 'Authentic Ukrainian cuisine with a modern twist.',
+    contactInfo: '555-1234',
+    coordinates: {
+      lat: 50.9396,
+      lng: 6.9415,
+    },
+    images: ['https://ibb.co/gWVLXKX'],
+  },
+  {
+    name: 'Kyiv Kitchen',
+    address: 'Aachener Str. 456, 50933 Köln',
+    category: 'Restaurants',
+    description: 'Traditional dishes from the heart of Ukraine.',
+    contactInfo: '555-5678',
+    coordinates: {
+      lat: 50.9408,
+      lng: 6.9108,
+    },
+    images: ['https://ibb.co/gWVLXKX'],
+  },
+  {
+    name: 'Lviv Cafe',
+    address: 'Venloer Str. 789, 50823 Köln',
+    category: 'Restaurants',
+    description: 'Cozy cafe offering Ukrainian pastries and coffee.',
+    contactInfo: '555-9012',
+    coordinates: {
+      lat: 50.9466,
+      lng: 6.9222,
+    },
+    images: ['https://ibb.co/gWVLXKX'],
+  },
+  {
+    name: 'Healthy Life Clinic',
+    address: 'Neumarkt 101, 50667 Köln',
+    category: 'Health',
+    description: 'Holistic health services for the entire family.',
+    contactInfo: '555-2345',
+    coordinates: {
+      lat: 50.9373,
+      lng: 6.9529,
+    },
+    images: ['https://ibb.co/gWVLXKX'],
+  },
+  {
+    name: 'Ukrainian Wellness Center',
+    address: 'Hansaring 202, 50670 Köln',
+    category: 'Health',
+    description: 'Specialized in traditional Ukrainian wellness practices.',
+    contactInfo: '555-6789',
+    coordinates: {
+      lat: 50.9471,
+      lng: 6.9553,
+    },
+    images: ['https://ibb.co/gWVLXKX'],
+  },
+  {
+    name: 'Kyiv Beauty Salon',
+    address: 'Hohe Str. 502, 50667 Köln',
+    category: 'Beauty',
+    description: 'High-end beauty treatments and products.',
+    contactInfo: '555-4567',
+    coordinates: {
+      lat: 50.937,
+      lng: 6.9578,
+    },
+    images: ['https://ibb.co/gWVLXKX'],
+  },
+  {
+    name: 'Lviv Spa & Beauty',
+    address: 'Breite Str. 603, 50667 Köln',
+    category: 'Beauty',
+    description: 'Relaxing spa and top-notch beauty services.',
+    contactInfo: '555-2341',
+    coordinates: {
+      lat: 50.9383,
+      lng: 6.9525,
+    },
+    images: ['https://ibb.co/gWVLXKX'],
+  },
+  {
+    name: 'Ukrainian Groceries',
+    address: 'Ehrenstraße 123, 50672 Köln',
+    category: 'Grocery Stores',
+    description: 'Wide selection of Ukrainian food products.',
+    contactInfo: '555-6780',
+    coordinates: {
+      lat: 50.9401,
+      lng: 6.9423,
+    },
+    images: ['https://ibb.co/gWVLXKX'],
+  },
+];

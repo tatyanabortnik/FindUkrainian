@@ -1,0 +1,8 @@
+.leaflet-control-locate a .leaflet-control-locate-location-arrow {
+  background-image: url(../../assets/target.png) !important;
+  background-size: contain;
+  /* Center the background image within the element */
+  background-position: center;
+  /* Prevent the background image from repeating */
+  background-repeat: no-repeat;
+}

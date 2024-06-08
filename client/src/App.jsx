@@ -13,8 +13,17 @@ import BusinessContext from './context/BusinessContext';
 function App() {
   const [error, setError] = useState(null);
   const [businesses, setBusinesses] = useState([]);
+  const [filteredBusinesses, setFilteredBusinesses] = useState([]);
 
   const categories = [
+    {
+      _id: 'all_id',
+      name: { en: 'all', uk: 'Всі' },
+      description: {
+        en: 'All services and products',
+        uk: 'Всі послуги та продукти',
+      },
+    },
     {
       _id: '60d5ec49f491cc001ab5e4d1',
       name: { en: 'Restaurants', uk: 'Ресторани' },
@@ -49,15 +58,32 @@ function App() {
     },
   ];
 
+  console.log('App component is rendering');
+
   useEffect(() => {
+    console.log('App component mounted');
     getBusinesses()
-      .then((data) => setBusinesses(data))
+      .then((data) => {
+        setBusinesses(data);
+        setFilteredBusinesses(data);
+      })
       .catch((error) => setError(error));
+
+    return () => {
+      console.log('App component unmounted');
+    };
   }, []);
 
   return (
     <Container maxWidth="lg">
-      <BusinessContext.Provider value={{ businesses, categories }}>
+      <BusinessContext.Provider
+        value={{
+          businesses,
+          categories,
+          filteredBusinesses,
+          setFilteredBusinesses,
+        }}
+      >
         <Header />
         <Main />
       </BusinessContext.Provider>

@@ -3,9 +3,40 @@ import './style.css';
 
 import Avatar from '@mui/material/Avatar';
 import LanguageIcon from '@mui/icons-material/Language';
-import { deepPurple } from '@mui/material/colors';
-import { IconButton, InputBase, Paper } from '@mui/material';
+import { grey } from '@mui/material/colors';
+import { IconButton, InputBase, Paper, Badge } from '@mui/material';
+import { styled } from '@mui/material/styles';
+
 import SearchIcon from '@mui/icons-material/Search';
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    backgroundColor: '#44b700',
+    color: '#44b700',
+    boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
+    '&::after': {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      borderRadius: '50%',
+      animation: 'ripple 1.2s infinite ease-in-out',
+      border: '1px solid currentColor',
+      content: '""',
+    },
+  },
+  '@keyframes ripple': {
+    '0%': {
+      transform: 'scale(.8)',
+      opacity: 1,
+    },
+    '100%': {
+      transform: 'scale(2.4)',
+      opacity: 0,
+    },
+  },
+}));
 
 export default function Header() {
   return (
@@ -19,14 +50,13 @@ export default function Header() {
         <Paper
           component="form"
           sx={{
-            p: '2px 4px',
             display: 'flex',
             alignItems: 'center',
             width: 200,
           }}
         >
           <InputBase sx={{ ml: 1, flex: 1 }} placeholder="Search" />
-          <IconButton type="button" sx={{ p: '10px' }}>
+          <IconButton type="button">
             <SearchIcon />
           </IconButton>
         </Paper>
@@ -35,7 +65,17 @@ export default function Header() {
           <LanguageIcon className="language"></LanguageIcon>
         </IconButton>
 
-        <Avatar sx={{ bgcolor: deepPurple[500] }}>TB</Avatar>
+        <IconButton>
+          <StyledBadge
+            overlap="circular"
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+            variant="dot"
+          >
+            <Avatar sx={{ bgcolor: grey[500], width: 38, height: 38 }}>
+              TB
+            </Avatar>
+          </StyledBadge>
+        </IconButton>
       </div>
     </div>
   );

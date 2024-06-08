@@ -1,4 +1,9 @@
 .leaflet-container {
-  height: 400px;
+  /* height: 400px; */
   flex-grow: 1;
+  border-radius: 10px;
+}
+
+.leaflet-popup {
+  min-width: 30em;
 }

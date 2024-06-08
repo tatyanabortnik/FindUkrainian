@@ -4,4 +4,6 @@
 
 .main__info {
   display: flex;
+  gap: 1em;
+  height: 60vh; /* ??? */
 }

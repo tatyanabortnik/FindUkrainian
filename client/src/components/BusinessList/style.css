@@ -1,0 +1,41 @@
+.business-list {
+  flex-basis: 35%;
+  overflow-y: scroll;
+}
+
+.cat-container {
+}
+
+.cat__title {
+  margin-bottom: 0.7em;
+}
+
+.cat__item {
+  display: flex;
+  gap: 0.6em;
+  margin-bottom: 1em;
+  align-items: flex-start;
+}
+
+.cat__img {
+  object-fit: cover;
+  /* object-position: 50% 50%; */
+  border-radius: 10px;
+  width: 80px;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.cat__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.cat__text-title {
+  font-weight: 800;
+}
+
+.cat__text-desc {
+  font-size: 0.8rem;
+}

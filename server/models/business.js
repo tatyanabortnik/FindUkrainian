@@ -5,6 +5,17 @@ const businessSchema = new mongoose.Schema({
   address: String,
   category: String,
   description: String,
+  longDescription: String,
+  website: String,
+  openingHours: {
+    Monday: String,
+    Tuesday: String,
+    Wednesday: String,
+    Thursday: String,
+    Friday: String,
+    Saturday: String,
+    Sunday: String,
+  },
   contactInfo: String,
   coordinates: {
     lat: Number,

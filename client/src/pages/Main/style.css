@@ -1,9 +1,9 @@
 .title {
-  padding: 1em 0;
+  padding: 0.5em 0 !important;
 }
 
 .main__info {
   display: flex;
   gap: 1em;
-  height: 60vh; /* ??? */
+  height: 58vh; /* ??? */
 }

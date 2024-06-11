@@ -1,0 +1,10 @@
+.site-footer {
+  text-align: center;
+  margin: 0.5em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  font-size: 0.8rem;
+  color: rgb(98, 96, 96);
+}

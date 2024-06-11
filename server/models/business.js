@@ -1,27 +1,48 @@
 const mongoose = require('mongoose');
 
 const businessSchema = new mongoose.Schema({
-  name: String,
-  address: String,
-  category: String,
-  description: String,
-  longDescription: String,
-  website: String,
+  name: { type: String, required: true },
+  address: { type: String, required: true },
+  category: { type: String, required: true },
+  description: { type: String, required: true },
+  longDescription: { type: String, required: true },
+  website: { type: String, required: true },
   openingHours: {
-    Monday: String,
-    Tuesday: String,
-    Wednesday: String,
-    Thursday: String,
-    Friday: String,
-    Saturday: String,
-    Sunday: String,
+    Monday: {
+      open: { type: Number, default: null, required: true },
+      close: { type: Number, default: null, required: true },
+    },
+    Tuesday: {
+      open: { type: Number, default: null, required: true },
+      close: { type: Number, default: null, required: true },
+    },
+    Wednesday: {
+      open: { type: Number, default: null, required: true },
+      close: { type: Number, default: null, required: true },
+    },
+    Thursday: {
+      open: { type: Number, default: null, required: true },
+      close: { type: Number, default: null, required: true },
+    },
+    Friday: {
+      open: { type: Number, default: null, required: true },
+      close: { type: Number, default: null, required: true },
+    },
+    Saturday: {
+      open: { type: Number, default: null, required: true },
+      close: { type: Number, default: null, required: true },
+    },
+    Sunday: {
+      open: { type: Number, default: null, required: true },
+      close: { type: Number, default: null, required: true },
+    },
   },
   contactInfo: String,
   coordinates: {
-    lat: Number,
-    lng: Number,
+    lat: { type: Number, required: true },
+    lng: { type: Number, required: true },
   },
-  images: [String],
+  images: { type: [String], required: true },
 });
 
 const Business = mongoose.model('Business', businessSchema);

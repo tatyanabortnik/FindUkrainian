@@ -1,0 +1,55 @@
+.detail-btn {
+  margin: 0 0 2em 0 !important;
+}
+
+.business-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.business-detail__desc {
+  width: 80%;
+  max-width: 750px;
+  text-align: left;
+}
+
+.business-detail__img img {
+  object-fit: cover;
+  border-radius: 10px;
+  height: 300px;
+  width: 100%;
+}
+
+.business-detail__img {
+  position: relative;
+}
+
+.business-detail__title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+  color: #fff;
+  text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000,
+    1px -1px 0 #000;
+}
+
+.business-detail__reviews,
+.business-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.rating {
+  width: 100px !important;
+}
+
+.business-hours__item {
+  display: flex;
+}
+.item__day-name {
+  flex-basis: 7em;
+  text-transform: capitalize;
+}

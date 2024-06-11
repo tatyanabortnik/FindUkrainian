@@ -1,82 +1,64 @@
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 import './style.css';
 
 import Avatar from '@mui/material/Avatar';
 import LanguageIcon from '@mui/icons-material/Language';
-import { grey } from '@mui/material/colors';
-import { IconButton, InputBase, Paper, Badge } from '@mui/material';
-import { styled } from '@mui/material/styles';
-
-import SearchIcon from '@mui/icons-material/Search';
-
-const StyledBadge = styled(Badge)(({ theme }) => ({
-  '& .MuiBadge-badge': {
-    backgroundColor: '#44b700',
-    color: '#44b700',
-    boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-    '&::after': {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      borderRadius: '50%',
-      animation: 'ripple 1.2s infinite ease-in-out',
-      border: '1px solid currentColor',
-      content: '""',
-    },
-  },
-  '@keyframes ripple': {
-    '0%': {
-      transform: 'scale(.8)',
-      opacity: 1,
-    },
-    '100%': {
-      transform: 'scale(2.4)',
-      opacity: 0,
-    },
-  },
-}));
+import { IconButton, Badge, Box } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import { useEffect, useState } from 'react';
+import Search from '../Search/Search';
+import {
+  initializeGoogleTranslate,
+  loadGoogleTranslateScript,
+} from '../../utils/googleTranslate';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
+  const { palette } = useTheme();
+  const [googleTranslateLoaded, setGoogleTranslateLoaded] = useState(false);
+
+  useEffect(() => {
+    // Load Google Translate script when component mounts
+    loadGoogleTranslateScript(() => {
+      initializeGoogleTranslate();
+      setGoogleTranslateLoaded(true);
+    });
+  }, []);
+
+  const handleTranslateClick = () => {
+    // Translate the page when translate button is clicked
+    if (googleTranslateLoaded) {
+      initializeGoogleTranslate();
+    }
+  };
+
   return (
-    <div className="header">
+    <Box className="header" sx={{ borderColor: palette.primary.main }}>
       <div className="header__logo">
-        <a href="#" className="logo">
+        <Link to={'/'} href="#" className="logo">
           <img src={logo} alt="logo" />
-        </a>
+        </Link>
       </div>
       <div className="header__right">
-        <Paper
-          component="form"
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            width: 200,
-          }}
-        >
-          <InputBase sx={{ ml: 1, flex: 1 }} placeholder="Search" />
-          <IconButton type="button">
-            <SearchIcon />
-          </IconButton>
-        </Paper>
+        <Search />
 
-        <IconButton size="large">
+        <IconButton color="primary" size="large" onClick={handleTranslateClick}>
           <LanguageIcon className="language"></LanguageIcon>
         </IconButton>
 
         <IconButton>
-          <StyledBadge
+          <Badge
+            className="styled-badge"
             overlap="circular"
             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
             variant="dot"
           >
-            <Avatar sx={{ bgcolor: grey[500], width: 38, height: 38 }}>
+            <Avatar sx={{ bgcolor: palette.primary.main }} translate="no">
               TB
             </Avatar>
-          </StyledBadge>
+          </Badge>
         </IconButton>
       </div>
-    </div>
+    </Box>
   );
 }

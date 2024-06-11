@@ -7,3 +7,29 @@
 .leaflet-popup {
   min-width: 30em;
 }
+.leaflet-popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.leaflet-popup-content p {
+  margin: 0;
+}
+
+.popup__img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.popup__btn {
+  color: #fff !important;
+}
+
+.open {
+  color: green;
+}
+
+.closed {
+  color: red;
+}

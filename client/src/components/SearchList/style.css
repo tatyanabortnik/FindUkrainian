@@ -1,0 +1,15 @@
+.search-list {
+  position: absolute;
+  z-index: 9999;
+  max-height: 300px;
+  overflow-y: auto;
+  top: 40px;
+  border-radius: 5px;
+  border: 2px solid grey;
+  border-top: none;
+
+  width: 125% !important;
+  max-width: 360px !important;
+  position: absolute !important;
+  background-color: #fff;
+}

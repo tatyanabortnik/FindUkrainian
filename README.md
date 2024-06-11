@@ -8,7 +8,8 @@ An SPA to locate Ukrainian businesses in Koln, Germany
 
 You will need Express server and MongoDB to run this project.
 
-Server port can be specified in the `server/index.js` file.
+Server port can be specified in the `server/index.js` file, defaults to 3000. If your server doesn't run on port 3000, you need to specify it in `client/src/services/businessService.js` file.
+
 MongoDB connection string is to be specified in `server/models/index.js` file.
 
 Install all dependencies. Server and client are two separate projects that need their respective packages to be installed via npm

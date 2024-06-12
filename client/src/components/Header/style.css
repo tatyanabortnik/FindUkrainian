@@ -43,3 +43,49 @@
     opacity: 0;
   }
 }
+
+iframe {
+  display: none;
+}
+
+.language {
+  position: relative;
+}
+
+.language__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+  top: 0 !important;
+}
+
+#google_translate_element span {
+  display: none;
+}
+
+.goog-te-gadget {
+  font-size: 0;
+}
+
+select.goog-te-combo {
+  font-size: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: url('../../assets/globe.svg');
+  border: none;
+  appearance: none;
+  padding: 12px;
+  cursor: pointer;
+}
+
+select.goog-te-combo:focus {
+  outline: none;
+}
+select.goog-te-combo:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}

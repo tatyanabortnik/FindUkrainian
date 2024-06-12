@@ -26,8 +26,8 @@ const seedData = [
         close: 1440,
       },
       Sunday: {
-        open: null,
-        close: null,
+        open: 600,
+        close: 1440,
       },
     },
     coordinates: {
@@ -75,8 +75,8 @@ const seedData = [
         close: 1440,
       },
       Sunday: {
-        open: null,
-        close: null,
+        open: 600,
+        close: 1440,
       },
     },
     coordinates: {
@@ -124,8 +124,8 @@ const seedData = [
         close: 1440,
       },
       Sunday: {
-        open: null,
-        close: null,
+        open: 600,
+        close: 1440,
       },
     },
     coordinates: {
@@ -173,8 +173,8 @@ const seedData = [
         close: 1440,
       },
       Sunday: {
-        open: null,
-        close: null,
+        open: 600,
+        close: 1440,
       },
     },
     coordinates: {
@@ -222,8 +222,8 @@ const seedData = [
         close: 1440,
       },
       Sunday: {
-        open: null,
-        close: null,
+        open: 600,
+        close: 1440,
       },
     },
     coordinates: {
@@ -271,8 +271,8 @@ const seedData = [
         close: 1440,
       },
       Sunday: {
-        open: null,
-        close: null,
+        open: 600,
+        close: 1440,
       },
     },
     coordinates: {
@@ -320,8 +320,8 @@ const seedData = [
         close: 1440,
       },
       Sunday: {
-        open: null,
-        close: null,
+        open: 600,
+        close: 1440,
       },
     },
     coordinates: {
@@ -369,8 +369,8 @@ const seedData = [
         close: 1440,
       },
       Sunday: {
-        open: null,
-        close: null,
+        open: 600,
+        close: 1440,
       },
     },
     coordinates: {

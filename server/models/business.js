@@ -9,32 +9,32 @@ const businessSchema = new mongoose.Schema({
   website: { type: String, required: true },
   openingHours: {
     Monday: {
-      open: { type: Number, default: null, required: true },
-      close: { type: Number, default: null, required: true },
+      open: { type: Number, required: true },
+      close: { type: Number, required: true },
     },
     Tuesday: {
-      open: { type: Number, default: null, required: true },
-      close: { type: Number, default: null, required: true },
+      open: { type: Number, required: true },
+      close: { type: Number, required: true },
     },
     Wednesday: {
-      open: { type: Number, default: null, required: true },
-      close: { type: Number, default: null, required: true },
+      open: { type: Number, required: true },
+      close: { type: Number, required: true },
     },
     Thursday: {
-      open: { type: Number, default: null, required: true },
-      close: { type: Number, default: null, required: true },
+      open: { type: Number, required: true },
+      close: { type: Number, required: true },
     },
     Friday: {
-      open: { type: Number, default: null, required: true },
-      close: { type: Number, default: null, required: true },
+      open: { type: Number, required: true },
+      close: { type: Number, required: true },
     },
     Saturday: {
-      open: { type: Number, default: null, required: true },
-      close: { type: Number, default: null, required: true },
+      open: { type: Number, required: true },
+      close: { type: Number, required: true },
     },
     Sunday: {
-      open: { type: Number, default: null, required: true },
-      close: { type: Number, default: null, required: true },
+      open: { type: Number, required: true },
+      close: { type: Number, required: true },
     },
   },
   contactInfo: String,

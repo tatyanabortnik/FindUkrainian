@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const Business = require('./business');
 const Categories = require('./categories');
 const seedData = require('./mockBusiness');
-
 const seedCategories = require('./mockCategories.js');
 
 const seedDB = async () => {

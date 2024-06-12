@@ -5,6 +5,8 @@ An SPA to locate Ukrainian businesses in Koln, Germany
 ## Room for improvement:
 1. I used this as a quick fix for a translation feature while having troubles with various translation APIs, hid the ugly parts that googleTranslateElement adds to the page with css, put the script loading in a separate js file, and bound the translate func to the button in the Header.jsx. But it stopped working! https://www.w3schools.com/howto/howto_google_translate.asp
 2. No media query for mobile yet
+3. Reviews and user btn are fake)) Reviews issue can be solved by creating a separate collection in the db for users and reviews, and relate them with ids.
+4. User auth would be nice to implement
 
 ### Prerequisites:
 

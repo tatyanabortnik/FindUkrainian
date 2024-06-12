@@ -7,29 +7,30 @@ import { IconButton, Badge, Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useEffect, useState } from 'react';
 import Search from '../Search/Search';
-import {
-  initializeGoogleTranslate,
-  loadGoogleTranslateScript,
-} from '../../utils/googleTranslate';
+// import {
+//   initializeGoogleTranslate,
+//   loadGoogleTranslateScript,
+// } from '../../utils/googleTranslate';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
   const { palette } = useTheme();
-  const [googleTranslateLoaded, setGoogleTranslateLoaded] = useState(false);
 
-  useEffect(() => {
-    // Load Google Translate script when component mounts
-    loadGoogleTranslateScript(() => {
-      initializeGoogleTranslate();
-      setGoogleTranslateLoaded(true);
-    });
-  }, []);
+  // const [googleTranslateLoaded, setGoogleTranslateLoaded] = useState(false);
+
+  // useEffect(() => {
+  //   // Load Google Translate script when component mounts
+  //   loadGoogleTranslateScript(() => {
+  //     initializeGoogleTranslate();
+  //     setGoogleTranslateLoaded(true);
+  //   });
+  // }, []);
 
   const handleTranslateClick = () => {
     // Translate the page when translate button is clicked
-    if (googleTranslateLoaded) {
-      initializeGoogleTranslate();
-    }
+    // if (googleTranslateLoaded) {
+    //   initializeGoogleTranslate();
+    // }
   };
 
   return (

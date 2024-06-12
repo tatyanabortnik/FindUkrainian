@@ -11,7 +11,7 @@ export default function BusinessDetail() {
   const { businesses } = useContext(BusinessContext);
 
   const business = businesses.find((el) => el._id === id);
-  // console.log(business);
+  console.log(business);
 
   return (
     <>
@@ -69,10 +69,12 @@ export default function BusinessDetail() {
                   />
                   <h4 style={{ margin: 0, textAlign: 'left' }}>Regina Tan</h4>
                   <p style={{ textAlign: 'left' }}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean luctus ut est sed faucibus. Duis bibendum ac ex
-                    vehicula laoreet. Suspendisse congue vulputate lobortis.
-                    Pellentesque at interdum.{' '}
+                    Never fails to impress! The service here is top-notch, with
+                    friendly staff always ready to assist you. Whether you're
+                    looking for a specific item or need help navigating the
+                    aisles, they're knowledgeable and eager to help. Plus, the
+                    checkout process is efficient, making for a seamless
+                    shopping experience. Highly recommended!{' '}
                   </p>
                   <p style={{ textAlign: 'left', color: 'gray' }}>
                     posted 1 minute ago
@@ -96,10 +98,13 @@ export default function BusinessDetail() {
                     Michel Michel
                   </h4>
                   <p style={{ textAlign: 'left' }}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean luctus ut est sed faucibus. Duis bibendum ac ex
-                    vehicula laoreet. Suspendisse congue vulputate lobortis.
-                    Pellentesque at interdum.{' '}
+                    Love shopping here! The service is exceptional – from the
+                    moment you walk in, you're greeted with smiles and helpful
+                    attitudes. The staff goes above and beyond to ensure you
+                    find everything you need, and they're quick to address any
+                    questions or concerns. Plus, the cleanliness and
+                    organization of the store make for a pleasant and
+                    stress-free shopping trip.{' '}
                   </p>
                   <p style={{ textAlign: 'left', color: 'gray' }}>
                     posted 1 minute ago

@@ -42,6 +42,7 @@ export default function Search() {
       >
         <InputLabel htmlFor="outlined-adornment-search">Search</InputLabel>
         <OutlinedInput
+          autoComplete="false"
           id="outlined-adornment-search"
           endAdornment={
             <InputAdornment position="end">

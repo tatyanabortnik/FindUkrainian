@@ -3,11 +3,13 @@
 An SPA to locate Ukrainian businesses in Koln, Germany
 
 ## Room for improvement:
-1. I used this as a quick fix for a translation feature while having troubles with various translation APIs, hid the ugly parts that googleTranslateElement adds to the page with css, put the script loading in a separate js file, and bound the translate func to the button in the Header.jsx. But it stopped working! https://www.w3schools.com/howto/howto_google_translate.asp
-2. BusinessDetail Page could use a carousel with images (db has an array of image urls)
-3. No media query for mobile yet
-4. Reviews and user btn are fake)) Reviews issue can be solved by creating a separate collection in the db for users and reviews, and relate them with ids.
-5. User auth would be nice to implement
+
+1. Kind of fixed Google translate widget. The solution is not perfect, and there is no back to original language button.
+1. ~~I used this as a quick fix for a translation feature while having troubles with various translation APIs, hid the ugly parts that googleTranslateElement adds to the page with css, put the script loading in a separate js file, and bound the translate func to the button in the Header.jsx. But it stopped working! https://www.w3schools.com/howto/howto_google_translate.asp~~
+1. BusinessDetail Page could use a carousel with images (db has an array of image urls)
+1. No media query for mobile yet
+1. Reviews and user btn are fake)) Reviews issue can be solved by creating a separate collection in the db for users and reviews, and relate them with ids.
+1. User auth would be nice to implement
 
 ### Prerequisites:
 

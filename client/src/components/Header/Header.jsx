@@ -1,37 +1,13 @@
 import logo from '../../assets/logo.png';
 import './style.css';
-
 import Avatar from '@mui/material/Avatar';
-import LanguageIcon from '@mui/icons-material/Language';
 import { IconButton, Badge, Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { useEffect, useState } from 'react';
 import Search from '../Search/Search';
-// import {
-//   initializeGoogleTranslate,
-//   loadGoogleTranslateScript,
-// } from '../../utils/googleTranslate';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
   const { palette } = useTheme();
-
-  // const [googleTranslateLoaded, setGoogleTranslateLoaded] = useState(false);
-
-  // useEffect(() => {
-  //   // Load Google Translate script when component mounts
-  //   loadGoogleTranslateScript(() => {
-  //     initializeGoogleTranslate();
-  //     setGoogleTranslateLoaded(true);
-  //   });
-  // }, []);
-
-  const handleTranslateClick = () => {
-    // Translate the page when translate button is clicked
-    // if (googleTranslateLoaded) {
-    //   initializeGoogleTranslate();
-    // }
-  };
 
   return (
     <Box className="header" sx={{ borderColor: palette.primary.main }}>
@@ -43,9 +19,8 @@ export default function Header() {
       <div className="header__right">
         <Search />
 
-        <IconButton color="primary" size="large" onClick={handleTranslateClick}>
-          <LanguageIcon className="language"></LanguageIcon>
-        </IconButton>
+        {/* this works funny and sometimes doesnt load. To see return to original btn, comment out 'iframe' rule in style.css */}
+        <div id="google_translate_element" className="language"></div>
 
         <IconButton>
           <Badge

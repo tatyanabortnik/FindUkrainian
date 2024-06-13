@@ -4,7 +4,7 @@ const router = require('./router.js');
 const { connectDB } = require('./models');
 
 const app = express();
-const PORT = 3000;  //TODO: move to config
+const PORT = 3000;  //TODO: move to config - make dynamic with .env
 
 app.use(cors());
 app.use(express.json());

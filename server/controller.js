@@ -1,6 +1,7 @@
 const Business = require('./models/business');
 const Category = require('./models/categories');
 
+//TODO: refactor into a single function passing the model name as a parameter
 exports.getBusinesses = async (_req, res) => {
   try {
     const businesses = await Business.find();
@@ -19,6 +20,7 @@ exports.getCategories = async (_req, res) => {
   }
 };
 
+//TODO: reimplement this function and use the params
 //-- I dont use it, but I should have ---//
 
 // exports.getBusinessById = async (req, res) => {

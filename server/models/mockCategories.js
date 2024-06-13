@@ -1,3 +1,5 @@
+//TODO: remove _id from seedCategories
+
 const seedCategories = [
   {
     name: {

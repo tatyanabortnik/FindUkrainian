@@ -7,11 +7,14 @@ import BusinessHandleButton from '../BusinessHandleButton/BusinessHandleButton';
 export default function BusinessList() {
   const { filteredBusinesses, categories } = useContext(BusinessContext);
 
+  //TODO: review getAllCategories & getBusinessByCategory?
+
   return (
     <div className="business-list">
       {categories.map((c) => {
-        if (c.name.en === ALL) return null; //dont render all option
+        if (c.name.en === ALL) return null; //dont render all option /* TODO: REVIEW - ALL is hardcoded => get */
 
+        //TODO: filteredBuisnesses? review duplications of code?
         const businessesByCategory = filteredBusinesses.filter(
           (b) => b.category === c.name.en
         );

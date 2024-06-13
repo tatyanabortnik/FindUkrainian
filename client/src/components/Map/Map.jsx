@@ -35,6 +35,7 @@ export default function Map() {
     [51.04, 7.085], // Northeast coordinates
   ];
 
+  //TODO: review if needed - if not, remove
   // console.log('Map component is rendering');
   // useEffect(() => {
   //   console.log('Map component mounted');

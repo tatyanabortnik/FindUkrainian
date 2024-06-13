@@ -4,7 +4,10 @@ import { Button } from '@mui/material';
 import './style.css';
 import { ALL } from '../../constants/categoriesConstants';
 
+//TODO: Rename to CategoryFilter component
+
 export default function Categories() {
+  //TODO: review the setFilteredBusinesses useState creation and whether it should be here
   const { businesses, categories, setFilteredBusinesses } =
     useContext(BusinessContext);
   const [selectedCategory, setSelectedCategory] = useState(ALL);
@@ -24,7 +27,7 @@ export default function Categories() {
       {categories.map((cat) => (
         <Button
           key={cat._id}
-          variant={selectedCategory === cat.name.en ? 'contained' : 'outlined'}
+          variant={selectedCategory === cat.name.en ? "contained" : "outlined"}
           onClick={() => handleCategory(cat.name.en)}
         >
           {cat.name.en}

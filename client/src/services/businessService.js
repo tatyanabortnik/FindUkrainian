@@ -1,5 +1,8 @@
-const baseUrl = 'http://localhost:3000';
+const baseUrl = 'http://localhost:3000'; //TODO: move to a config file / process.env
 
+//TODO: create generic GET function
+
+//TODO: refactor to async/await
 export const getBusinesses = () => {
   return fetch(baseUrl + '/businesses')
     .then((res) => {
@@ -27,3 +30,7 @@ export const getCategories = () => {
       throw error;
     });
 };
+
+//TODO: getBusinessesByID function
+
+//TODO: getCategoriesByID

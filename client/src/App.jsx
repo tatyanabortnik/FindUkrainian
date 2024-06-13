@@ -12,19 +12,24 @@ import Footer from './components/Footer/Footer';
 
 function App() {
   const [error, setError] = useState(null);
+  // TODO: move these to context file?
   const [businesses, setBusinesses] = useState([]);
   const [categories, setCategories] = useState([]);
+  // ^^
+
   const [filteredBusinesses, setFilteredBusinesses] = useState([]);
   const [businessId, setBusinessId] = useState();
 
+  //TODO: remove
   // console.log('App component is rendering');
 
+  //TODO: async / await
   useEffect(() => {
     // console.log('App component mounted');
     getBusinesses()
       .then((data) => {
         setBusinesses(data);
-        setFilteredBusinesses(data);
+        setFilteredBusinesses(data); //TODO: REVIEW / remove and filter setBusinesses
       })
       .catch((error) => setError(error));
 
@@ -37,11 +42,14 @@ function App() {
     return () => {
       // console.log('App component unmounted');
     };
+
+    //TODO: getBusinessesByID
   }, []);
 
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="lg">
+        {/* TODO: fix context */}
         <BusinessContext.Provider
           value={{
             businesses,
@@ -52,10 +60,11 @@ function App() {
             setBusinessId,
           }}
         >
+          {/* TODO: route to error page instead -> create ERROR COMPONENT*/}
           {error ? (
             <div>Oops! Something went wrong. Please try again later.</div>
-          ) : (
-            <div className="app">
+            ) : (
+              <div className="app">
               <Header />
               <h1 className="title">Find 🇺🇦 services in Köln 🇩🇪</h1>
               <Routes>

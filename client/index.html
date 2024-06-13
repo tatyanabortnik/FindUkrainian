@@ -13,19 +13,20 @@
     <script type="module" src="/src/main.jsx"></script>
 
     <!-- Google translate widget. This probably shouldn't be here for beauty reasons :D-->
+    <!-- FIXME: remove the google translate widge and move another location (App.js)  -->
     <script type="text/javascript">
       function googleTranslateElementInit() {
         new google.translate.TranslateElement(
           {
             autoDisplay: false,
-            pageLanguage: 'en',
-            includedLanguages: 'uk,en',
+            pageLanguage: "en",
+            includedLanguages: "uk,en",
           },
-          'google_translate_element'
+          "google_translate_element"
         );
       }
 
-      document.cookie = 'googtrans=';
+      document.cookie = "googtrans=";
     </script>
 
     <script

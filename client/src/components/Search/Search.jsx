@@ -15,6 +15,7 @@ export default function Search() {
   const [showSearchList, setShowSearchList] = useState(true);
   const [searchValue, setSearchValue] = useState('');
 
+  //TODO: Figure out how this is working and if it is correct?
   const { businesses } = useContext(BusinessContext);
 
   const handleSearch = (e) => {

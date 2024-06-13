@@ -10,8 +10,10 @@ export default function Header() {
   const { palette } = useTheme();
 
   return (
+    //TODO: review MUI sx placements for all below
     <Box className="header" sx={{ borderColor: palette.primary.main }}>
       <div className="header__logo">
+        {/* TODO: remove href */}
         <Link to={'/'} href="#" className="logo">
           <img src={logo} alt="logo" />
         </Link>
@@ -19,6 +21,7 @@ export default function Header() {
       <div className="header__right">
         <Search />
 
+        {/* FIXME: Review google translate button */}
         {/* this works funny and sometimes doesnt load. To see return to original btn, comment out 'iframe' rule in style.css */}
         <div id="google_translate_element" className="language"></div>
 

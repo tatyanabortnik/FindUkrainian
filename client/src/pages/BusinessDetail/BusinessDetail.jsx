@@ -6,10 +6,13 @@ import BusinessContext from '../../context/BusinessContext';
 import './style.css';
 import getAmPm from '../../utils/getAmPm';
 
+//TODO: Rename to BusinessDetailPage
+
 export default function BusinessDetail() {
   const { id } = useParams();
   const { businesses } = useContext(BusinessContext);
 
+  //TODO: review and verify - getBusinessByID
   const business = businesses.find((el) => el._id === id);
   console.log(business);
 
@@ -25,6 +28,7 @@ export default function BusinessDetail() {
         Back to map
       </Button>
 
+       {/* TODO: Create a BusinessDetail component and move out from this */}
       {business && (
         <div className="business-detail">
           <div className="business-detail__img">
@@ -52,6 +56,7 @@ export default function BusinessDetail() {
             </div>
           </div>
 
+          {/* FIXME: Create a dynamic comments component, service and add to DB scheme*/}
           <div className="business-detail__reviews">
             <h2 className="reviews__title">Reviews</h2>
 

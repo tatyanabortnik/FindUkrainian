@@ -1,11 +1,10 @@
-import { useContext } from 'react';
-import BusinessContext from '../../context/BusinessContext';
+import { useBusinessContext} from "../../context/BusinessContext.jsx";
 import { ALL } from '../../constants/categoriesConstants';
 import './style.css';
 import BusinessHandleButton from '../BusinessHandleButton/BusinessHandleButton';
 
 export default function BusinessList() {
-  const { filteredBusinesses, categories } = useContext(BusinessContext);
+  const { filteredBusinesses, categories } = useBusinessContext();
 
   //TODO: review getAllCategories & getBusinessByCategory?
 

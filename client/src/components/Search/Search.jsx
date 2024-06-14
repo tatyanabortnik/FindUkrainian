@@ -3,20 +3,19 @@ import {
   InputAdornment,
   InputLabel,
   OutlinedInput,
-} from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
-import { useContext, useState } from 'react';
-import BusinessContext from '../../context/BusinessContext';
-import SearchList from '../SearchList/SearchList';
-import './style.css';
+} from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import { useState } from "react";
+import { useBusinessContext } from "../../context/BusinessContext.jsx";
+import SearchList from "../SearchList/SearchList";
+import "./style.css";
 
 export default function Search() {
   const [foundBusinesses, setFoundBusinesses] = useState([]);
   const [showSearchList, setShowSearchList] = useState(true);
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
 
-  //TODO: Figure out how this is working and if it is correct?
-  const { businesses } = useContext(BusinessContext);
+  const { businesses } = useBusinessContext();
 
   const handleSearch = (e) => {
     const value = e.target.value.toLowerCase();
@@ -29,7 +28,7 @@ export default function Search() {
   };
 
   const handleBusinessClick = () => {
-    setSearchValue('');
+    setSearchValue("");
     setShowSearchList(false);
   };
 
@@ -37,7 +36,7 @@ export default function Search() {
     <>
       <FormControl
         className="search-form"
-        sx={{ m: 1, width: '25ch' }}
+        sx={{ m: 1, width: "25ch" }}
         variant="outlined"
         size="small"
       >

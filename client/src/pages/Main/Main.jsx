@@ -1,5 +1,5 @@
 import BusinessList from '../../components/BusinessList/BusinessList';
-import Categories from '../../components/Categories/Categories';
+import Categories from '../../components/CategoryFilter/CategoryFilter';
 import Map from '../../components/Map/Map';
 import './style.css';
 

@@ -1,16 +1,17 @@
 /* eslint-disable react/prop-types */
-import { Button } from '@mui/material';
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import BusinessContext from '../../context/BusinessContext';
-import './style.css';
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
+import {
+  useBusinessContext,
+} from "../../context/BusinessContext";
+import "./style.css";
 
 export default function BusinessHandleButton({
   business,
   asLink,
   handleBusinessClick,
 }) {
-  const { setBusinessId } = useContext(BusinessContext);
+  const { setBusinessId } = useBusinessContext();
 
   const handleBusinessId = (id) => {
     setBusinessId(id);
@@ -34,7 +35,7 @@ export default function BusinessHandleButton({
     <Button
       className="business-btn"
       component={Link}
-      to={'/id/' + business._id}
+      to={"/id/" + business._id}
       key={business._id}
       onClick={handleClick}
     >

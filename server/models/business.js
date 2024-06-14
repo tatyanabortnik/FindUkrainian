@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 
-//TODO: review 'require' for all if pulling data from API (not mock)
-//TODO: review openingHours type (Number) -> (String)
+//FixMe: review 'require' for all if pulling data from API (not mock)
+//Resolution: No specified API to fetch from. Deciding to leave schema as is.
+
+//FixMe: review openingHours type (Number) -> (String)
+//Resolution: Mock data is still hard coded. 
 const businessSchema = new mongoose.Schema({
   name: { type: String, required: true },
   address: { type: String, required: true },

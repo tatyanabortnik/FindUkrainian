@@ -1,5 +1,3 @@
-//TODO: remove _id from seedCategories
-
 const seedCategories = [
   {
     name: {
@@ -10,7 +8,6 @@ const seedCategories = [
       en: 'All services and products',
       uk: 'Всі послуги та продукти',
     },
-    _id: 'all_id',
   },
   {
     name: {
@@ -21,7 +18,6 @@ const seedCategories = [
       en: 'Places where you can eat',
       uk: 'Місця, де можна поїсти',
     },
-    _id: '60d5ec49f491cc001ab5e4d1',
   },
   {
     name: {
@@ -32,7 +28,6 @@ const seedCategories = [
       en: 'Health-related services and products',
       uk: "Послуги та продукти, пов'язані зі здоров'ям",
     },
-    _id: '60d5ec49f491cc001ab5e4d2',
   },
   {
     name: {
@@ -43,7 +38,6 @@ const seedCategories = [
       en: 'Beauty salons and services',
       uk: 'Салони краси та послуги',
     },
-    _id: '60d5ec49f491cc001ab5e4d3',
   },
   {
     name: {
@@ -54,7 +48,6 @@ const seedCategories = [
       en: 'Stores selling food and everyday items',
       uk: 'Магазини, що продають продукти та повсякденні товари',
     },
-    _id: '60d5ec49f491cc001ab5e4d4',
   },
 ];
 

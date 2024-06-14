@@ -3,6 +3,9 @@ const cors = require('cors');
 const router = require('./router.js');
 const { connectDB } = require('./models');
 
+// require('dotenv').config();
+// const { PORT } = require("/")
+
 const app = express();
 const PORT = 3000;  //TODO: move to config - make dynamic with .env
 

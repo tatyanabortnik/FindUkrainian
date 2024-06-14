@@ -1,7 +1,36 @@
-import { createContext } from 'react';
+import { createContext } from "react";
 
-//TODO: add context here? review how context works here
+const GlobalContext = createContext(null);
 
-const BusinessContext = createContext(null);
+export const ContextProvider = ({ children }) => {
+  const [businesses, setBusinesses] = useState([]);
+  const [filteredBusinesses, setFilteredBusinesses] = useState([]);
+  const [businessId, setBusinessId] = useState();
 
-export default BusinessContext;
+  const [categories, setCategories] = useState([]);
+
+  return (
+    <GlobalContext.Provider
+      value={{
+        businesses,
+        setBusinesses,
+        filteredBusinesses,
+        setFilteredBusinesses,
+        businessId,
+        setBusinessId,
+        categories,
+        setCategories,
+      }}
+    >
+      {children}
+    </GlobalContext.Provider>
+  );
+};
+
+export const useGlobalContext = () => {
+  const globalContext = createContext(GlobalContext);
+  if (globalContext === undefined) {
+    throw new Error("useGlobalContext must be inside a ContextProvider");
+  }
+  return globalContext;
+};

@@ -2,15 +2,17 @@
 import { Button } from '@mui/material';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import BusinessContext from '../../context/BusinessContext';
+import {BusinessContext, useBusinessContext} from "../../context/BusinessContext";
 import './style.css';
+import IdContext from '../../context/IdContext';
 
 export default function BusinessHandleButton({
   business,
   asLink,
   handleBusinessClick,
 }) {
-  const { setBusinessId } = useContext(BusinessContext);
+  // const { setBusinessId } = useContext(BusinessContext);
+  const { setBusinessId } = useBusinessContext();
 
   const handleBusinessId = (id) => {
     setBusinessId(id);

@@ -1,16 +1,17 @@
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Avatar, Button, Grid, Rating } from '@mui/material';
-import { useContext } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import BusinessContext from '../../context/BusinessContext';
-import './style.css';
-import getAmPm from '../../utils/getAmPm';
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { Avatar, Button, Grid, Rating } from "@mui/material";
+import { useContext } from "react";
+import { Link, useParams } from "react-router-dom";
+import { BusinessContext, useBusinessContext } from "../../context/BusinessContext.jsx";
+import "./style.css";
+import getAmPm from "../../utils/getAmPm";
 
 //TODO: Rename to BusinessDetailPage
 
 export default function BusinessDetail() {
   const { id } = useParams();
-  const { businesses } = useContext(BusinessContext);
+  // const { businesses } = useContext(BusinessContext);
+  const { businesses } = useBusinessContext();
 
   //TODO: review and verify - getBusinessByID
   const business = businesses.find((el) => el._id === id);
@@ -21,14 +22,14 @@ export default function BusinessDetail() {
       <Button
         className="detail-btn"
         component={Link}
-        to={'/'}
+        to={"/"}
         variant="contained"
         startIcon={<ArrowBackIcon />}
       >
         Back to map
       </Button>
 
-       {/* TODO: Create a BusinessDetail component and move out from this */}
+      {/* TODO: Create a BusinessDetail component and move out from this */}
       {business && (
         <div className="business-detail">
           <div className="business-detail__img">
@@ -72,16 +73,16 @@ export default function BusinessDetail() {
                     value={4}
                     readOnly
                   />
-                  <h4 style={{ margin: 0, textAlign: 'left' }}>Regina Tan</h4>
-                  <p style={{ textAlign: 'left' }}>
+                  <h4 style={{ margin: 0, textAlign: "left" }}>Regina Tan</h4>
+                  <p style={{ textAlign: "left" }}>
                     Never fails to impress! The service here is top-notch, with
                     friendly staff always ready to assist you. Whether you're
                     looking for a specific item or need help navigating the
                     aisles, they're knowledgeable and eager to help. Plus, the
                     checkout process is efficient, making for a seamless
-                    shopping experience. Highly recommended!{' '}
+                    shopping experience. Highly recommended!{" "}
                   </p>
-                  <p style={{ textAlign: 'left', color: 'gray' }}>
+                  <p style={{ textAlign: "left", color: "gray" }}>
                     posted 1 minute ago
                   </p>
                 </Grid>
@@ -99,19 +100,19 @@ export default function BusinessDetail() {
                     value={5}
                     readOnly
                   />
-                  <h4 style={{ margin: 0, textAlign: 'left' }}>
+                  <h4 style={{ margin: 0, textAlign: "left" }}>
                     Michel Michel
                   </h4>
-                  <p style={{ textAlign: 'left' }}>
+                  <p style={{ textAlign: "left" }}>
                     Love shopping here! The service is exceptional – from the
                     moment you walk in, you're greeted with smiles and helpful
                     attitudes. The staff goes above and beyond to ensure you
                     find everything you need, and they're quick to address any
                     questions or concerns. Plus, the cleanliness and
                     organization of the store make for a pleasant and
-                    stress-free shopping trip.{' '}
+                    stress-free shopping trip.{" "}
                   </p>
-                  <p style={{ textAlign: 'left', color: 'gray' }}>
+                  <p style={{ textAlign: "left", color: "gray" }}>
                     posted 1 minute ago
                   </p>
                 </Grid>

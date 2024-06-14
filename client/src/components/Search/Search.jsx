@@ -5,11 +5,8 @@ import {
   OutlinedInput,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { useContext, useState } from "react";
-import {
-  BusinessContext,
-  useBusinessContext,
-} from "../../context/BusinessContext.jsx";
+import { useState } from "react";
+import { useBusinessContext } from "../../context/BusinessContext.jsx";
 import SearchList from "../SearchList/SearchList";
 import "./style.css";
 
@@ -18,9 +15,7 @@ export default function Search() {
   const [showSearchList, setShowSearchList] = useState(true);
   const [searchValue, setSearchValue] = useState("");
 
-  //TODO: Figure out how this is working and if it is correct?
   const { businesses } = useBusinessContext();
-  // const { businesses } = useContext(BusinessContext);
 
   const handleSearch = (e) => {
     const value = e.target.value.toLowerCase();

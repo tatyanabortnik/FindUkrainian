@@ -10,7 +10,6 @@ import getAmPm from "../../utils/getAmPm";
 
 export default function BusinessDetail() {
   const { id } = useParams();
-  // const { businesses } = useContext(BusinessContext);
   const { businesses } = useBusinessContext();
 
   //TODO: review and verify - getBusinessByID

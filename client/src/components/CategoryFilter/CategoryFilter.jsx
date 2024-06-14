@@ -1,17 +1,12 @@
-import { useContext, useState } from 'react';
-import {BusinessContext, useBusinessContext} from "../../context/BusinessContext";
+import { useState } from 'react';
+import { useBusinessContext} from "../../context/BusinessContext";
 import { Button } from '@mui/material';
 import './style.css';
 import { ALL } from '../../constants/categoriesConstants';
-// import { getBusinesses } from "./services/businessService";
 
 
-//TODO: Rename to CategoryFilter component
-
-export default function Categories() {
-  //TODO: review the setFilteredBusinesses useState creation and whether it should be here
+export default function CategoryFilter() {
   const { businesses, categories, setFilteredBusinesses } = useBusinessContext();
-  // const { businesses, categories, setFilteredBusinesses } = useContext(BusinessContext);
 
   const [selectedCategory, setSelectedCategory] = useState(ALL);
 

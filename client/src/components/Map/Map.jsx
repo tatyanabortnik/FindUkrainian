@@ -1,8 +1,8 @@
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './style.css';
-import { useContext, useEffect, useRef } from 'react';
-import {BusinessContext, useBusinessContext} from "../../context/BusinessContext.jsx";
+import { useEffect, useRef } from 'react';
+import { useBusinessContext} from "../../context/BusinessContext.jsx";
 import { Icon } from 'leaflet';
 import LocateControl from '../LocateControl/LocateControl';
 import isOpenNow from '../../utils/isOpen';
@@ -12,7 +12,6 @@ import { Link } from 'react-router-dom';
 
 export default function Map() {
   const { filteredBusinesses, businessId } = useBusinessContext();
-  // const { filteredBusinesses, businessId } = useContext(BusinessContext);
 
   const markerRefs = useRef({}); //store refs to markers in DOM here, to open their popups programmatically
 

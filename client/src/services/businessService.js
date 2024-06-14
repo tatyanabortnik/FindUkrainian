@@ -1,36 +1,31 @@
-const baseUrl = 'http://localhost:3000'; //TODO: move to a config file / process.env
+// import {baseUrl} from '../config.js'; //TODO: move to a config file / process.env
+// import { baseUrl } from "../../config";
+const baseUrl = 'http://localhost:3000'
 
-//TODO: create generic GET function
+export const getBusinesses = () => getAtEndpoint('businesses');
+export const getCategories = () => getAtEndpoint('categories')
 
-//TODO: refactor to async/await
-export const getBusinesses = () => {
-  return fetch(baseUrl + '/businesses')
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error('Failed to fetch businesses');
-      }
-      return res.json();
-    })
-    .catch((error) => {
-      console.error(`Failed to fetch businesses: ${error}`);
-      throw error;
-    });
+const getAtEndpoint = async (endpoint) => {
+
+  try {
+    const res = await fetch(`${baseUrl}/${endpoint}`);
+    const result = await res.json();
+    return result;
+  } catch (error) {
+    console.error(`Failed to fetch ${endpoint}: ${error}`);
+  }
+}
+
+
+
+export const getBusinessesByID = async (ID) => {
+  try {
+    const res = await fetch(baseUrl + `/businesses/${ID}`)
+    const result = res.json();
+    return result;
+  } catch (error) {
+    console.error(`Failed to fetch category: ${error}`);
+  };
 };
 
-export const getCategories = () => {
-  return fetch(baseUrl + '/categories')
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error('Failed to fetch categories');
-      }
-      return res.json();
-    })
-    .catch((error) => {
-      console.error(`Failed to fetch categories: ${error}`);
-      throw error;
-    });
-};
 
-//TODO: getBusinessesByID function
-
-//TODO: getCategoriesByID

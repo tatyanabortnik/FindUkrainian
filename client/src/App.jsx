@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { getBusinesses, getCategories } from './services/businessService';
+import { getBusinesses, getCategories, getBusinessesByID } from './services/businessService';
 import Header from './components/Header/Header';
 import { Container, ThemeProvider } from '@mui/material';
 import Main from './pages/Main/Main';
@@ -15,35 +15,44 @@ function App() {
   // TODO: move these to context file?
   const [businesses, setBusinesses] = useState([]);
   const [categories, setCategories] = useState([]);
-  // ^^
-
   const [filteredBusinesses, setFilteredBusinesses] = useState([]);
   const [businessId, setBusinessId] = useState();
 
-  //TODO: remove
-  // console.log('App component is rendering');
 
-  //TODO: async / await
+  
   useEffect(() => {
-    // console.log('App component mounted');
-    getBusinesses()
-      .then((data) => {
+ 
+   const fetchBusinesses = async () => {
+      try { 
+        const data = await getBusinesses();
         setBusinesses(data);
-        setFilteredBusinesses(data); //TODO: REVIEW / remove and filter setBusinesses
-      })
-      .catch((error) => setError(error));
+        setFilteredBusinesses(data);
+      }
+      catch (e) {
+        console.log("fetchBusinesses error:", e)
+      }
+    }
+  
 
-    getCategories()
-      .then((data) => {
+    const fetchCategories = async () => {
+      try {
+        const data = await getCategories();
         setCategories(data);
-      })
-      .catch((error) => setError(error));
+      }
+      catch (e) {
+        console.log('fetchCategories error:', e)
+      }
+    }
 
-    return () => {
-      // console.log('App component unmounted');
-    };
+    const fetchBusinessesByID = async (id) => {
+      try {
+        const data = await getBusinessesByID(id)
+        setBusinessId(data)
+      } catch (e) {
+        console.log('fetchBusinessesById error:', e)
+      }
+    }
 
-    //TODO: getBusinessesByID
   }, []);
 
   return (

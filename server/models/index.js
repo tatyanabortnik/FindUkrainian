@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const dbName = 'find_ukrainian'; //TODO: move to config file
-const connectionString = 'mongodb://127.0.0.1:27017'; //TODO: move to config - make dynamic with .env
+const {dbName,connectionString} = require('../config.js')
+
 
 async function connectDB() {
   try {
@@ -11,4 +11,4 @@ async function connectDB() {
   }
 }
 
-module.exports = { connectDB, connectionString }; //TODO: remove connectionString - export from config
+module.exports = { connectDB }; 

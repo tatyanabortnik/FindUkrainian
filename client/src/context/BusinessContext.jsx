@@ -65,7 +65,6 @@ export const BusinessProvider = ({ children }) => {
   );
 };
 
-// export const useBusinessContext = ''
 export const useBusinessContext = () => {
   const businessContext = useContext(BusinessContext);
   if (businessContext === undefined) {

@@ -1,21 +1,22 @@
 // seed.js
-//TODO: review location of seed file
 
-const { connectionString } = require('./index.js');
+
+const { connectionString, dbName } = require('../config.js');
 
 const mongoose = require('mongoose');
-const Business = require('./business');
-const Categories = require('./categories');
-const seedData = require('./mockBusiness'); //TODO: rename to seedBusiness / review location of mock data
-const seedCategories = require('./mockCategories.js'); //TODO: review location of mock data
+const Business = require('../models/business.js');
+const Categories = require('../models/categories.js');
+const seedData = require('./seedBusinesses.js');
+const seedCategories = require('./seedCategories.js');
+
 
 //FIXME: do we need to remove the console logs here -> if its only use for dev?
-const seedDB = async () => {
-  const dbName = 'find_ukrainian'; //TODO: pull from config file
+const seedDB = (async () => {
+
 
   try {
     // Connect to MongoDB
-    await mongoose.connect(`${connectionString}/${dbName}`); //TODO: review the path -> place in config file
+    await mongoose.connect(`${connectionString}/${dbName}`); 
 
     // Clear the database
     await Business.deleteMany({});
@@ -37,6 +38,6 @@ const seedDB = async () => {
   } catch (err) {
     console.error(err);
   }
-};
+})()
 
-seedDB(); //TODO: make an iife
+// seedDB(); //TODO: make an iife

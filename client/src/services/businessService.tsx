@@ -22,7 +22,7 @@ const getAtEndpoint = async (endpoint: string): Promise<any> => {
 
 
 
-export const getBusinessesByID = async (ID: string): Promise<any> => {
+export const getBusinessesByID = async (ID: string): Promise<string | undefined> => {
   try {
     const res = await fetch(baseUrl + `/businesses/${ID}`)
     const result = res.json();
@@ -31,9 +31,4 @@ export const getBusinessesByID = async (ID: string): Promise<any> => {
     console.error(`Failed to fetch category: ${error}`);
   };
 };
-
-
-function async<T>(endpoint: any, string: any) {
-  throw new Error("Function not implemented.");
-}
 

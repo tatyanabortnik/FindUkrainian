@@ -4,7 +4,7 @@ import { Container, ThemeProvider } from "@mui/material";
 import { theme } from "./themes/theme";
 import { BusinessProvider } from "./context/BusinessContext";
 import Header from "./components/Header/Header";
-import Main from "./pages/Main/Main";
+import Main from "./pages/Home/Home";
 import BusinessDetail from "./pages/BusinessDetail/BusinessDetail";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Footer from "./components/Footer/Footer";

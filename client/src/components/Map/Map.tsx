@@ -2,18 +2,25 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './style.css';
 import { useEffect, useRef } from 'react';
-import { useBusinessContext} from "../../context/BusinessContext.jsx";
-import { Icon } from 'leaflet';
+import { useBusinessContext} from "../../context/BusinessContext";
+import { Icon, Marker as LeafletMarker } from 'leaflet';
 import LocateControl from '../LocateControl/LocateControl';
 import isOpenNow from '../../utils/isOpen';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-export default function Map() {
-  const { filteredBusinesses, businessId } = useBusinessContext();
 
-  const markerRefs = useRef({}); //store refs to markers in DOM here, to open their popups programmatically
+
+export default function Map() {
+  const businessContext =  useBusinessContext();
+
+  if (!businessContext) {
+    return null
+  }
+  const { filteredBusinesses, businessId } = businessContext;
+
+  const markerRefs = useRef<{[key: string]: LeafletMarker | null}>({}); //store refs to markers in DOM here, to open their popups programmatically
 
   useEffect(() => {
     businessId && markerRefs.current[businessId]?.openPopup();
@@ -30,19 +37,10 @@ export default function Map() {
     shadowSize: [41, 41],
   });
 
-  const cologneBounds = [
+  const cologneBounds: [[number, number], [number, number]] = [
     [50.83, 6.827], // Southwest coordinates
     [51.04, 7.085], // Northeast coordinates
   ];
-
-  //TODO: review if needed - if not, remove
-  // console.log('Map component is rendering');
-  // useEffect(() => {
-  //   console.log('Map component mounted');
-  //   return () => {
-  //     console.log('Map component unmounted');
-  //   };
-  // }, []);
 
   return (
     <MapContainer
@@ -59,7 +57,6 @@ export default function Map() {
 
       {filteredBusinesses.map((b) => {
         const isOpen = isOpenNow(b.openingHours);
-        // console.log(isOpenNow);
         return (
           <Marker
             key={b._id}

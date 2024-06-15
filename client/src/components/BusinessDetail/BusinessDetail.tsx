@@ -1,34 +1,19 @@
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { Avatar, Button, Grid, Rating } from "@mui/material";
-import { useContext } from "react";
-import { Link, useParams } from "react-router-dom";
-import { BusinessContext, useBusinessContext } from "../../context/BusinessContext.jsx";
-import "./style.css";
-import getAmPm from "../../utils/getAmPm";
+import { Avatar, Grid, Rating } from "@mui/material";
+import { useBusinessContext } from "../../context/BusinessContext.ts";
+import { BusinessType } from "../../Types/BusinessType.ts";
+import getAmPm from "../../utils/getAmPm.ts";
 
-//TODO: Rename to BusinessDetailPage
 
-export default function BusinessDetail() {
-  const { id } = useParams();
-  const { businesses } = useBusinessContext();
+interface businessProp {
+  business: BusinessType
+}
 
-  //TODO: review and verify - getBusinessByID
-  const business = businesses.find((el) => el._id === id);
-  console.log(business);
+const BusinessDetail = ({ business }: businessProp) => {
+  const businessContext = useBusinessContext();
+  if (!businessContext) return null;
 
   return (
     <>
-      <Button
-        className="detail-btn"
-        component={Link}
-        to={"/"}
-        variant="contained"
-        startIcon={<ArrowBackIcon />}
-      >
-        Back to map
-      </Button>
-
-      {/* TODO: Create a BusinessDetail component and move out from this */}
       {business && (
         <div className="business-detail">
           <div className="business-detail__img">
@@ -122,4 +107,6 @@ export default function BusinessDetail() {
       )}
     </>
   );
-}
+};
+
+export default BusinessDetail;

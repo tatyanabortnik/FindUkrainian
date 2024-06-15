@@ -5,7 +5,7 @@ import { theme } from "./themes/theme";
 import { BusinessProvider } from "./context/BusinessContext";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
-import BusinessDetail from "./pages/BusinessDetail/BusinessDetail";
+import BusinessDetailPage from "./pages/BusinessDetailPage/BusinessDetailPage";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
@@ -25,7 +25,7 @@ function App() {
               <h1 className="title">Find 🇺🇦 services in Köln 🇩🇪</h1>
               <Routes>
                 <Route path={"/"} element={<Home />} />
-                <Route path={"/id/:id"} element={<BusinessDetail />} />
+                <Route path={"/id/:id"} element={<BusinessDetailPage />} />
                 <Route path="*" element={<PageNotFound />} />
               </Routes>
               <Footer />

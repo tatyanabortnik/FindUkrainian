@@ -5,15 +5,29 @@ import {
   useBusinessContext,
 } from "../../context/BusinessContext";
 import "./style.css";
+import { BusinessType } from "../../Types/BusinessType";
+
+interface BusinessHandleButtonProps {
+  business: BusinessType;
+  asLink: boolean;
+  handleBusinessClick: () => void;
+}
+
 
 export default function BusinessHandleButton({
   business,
   asLink,
   handleBusinessClick,
-}) {
-  const { setBusinessId } = useBusinessContext();
+}: BusinessHandleButtonProps) {
+  
+  const businessContext =  useBusinessContext();
 
-  const handleBusinessId = (id) => {
+  if (!businessContext) {
+    return null
+  }
+  const { setBusinessId } = businessContext;
+
+  const handleBusinessId = (id: string) => {
     setBusinessId(id);
   };
 

@@ -28,7 +28,7 @@ export default function BusinessList() {
           <ul className="cat-container" key={c._id}>
             <h2 className="cat__title">{c.name.en}</h2>
             {businessesByCategory.map((b) => (
-              <BusinessHandleButton key={b._id} business={b} />
+              <BusinessHandleButton key={b._id} business={b} asLink={false} handleBusinessClick={function (): void {} } />
             ))}
           </ul>
         );

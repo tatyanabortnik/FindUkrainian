@@ -6,18 +6,22 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
-import { useBusinessContext } from "../../context/BusinessContext.jsx";
+import { useBusinessContext } from "../../context/BusinessContext";
 import SearchList from "../SearchList/SearchList";
 import "./style.css";
+import { BusinessType } from "../../Types/BusinessType";
 
 export default function Search() {
-  const [foundBusinesses, setFoundBusinesses] = useState([]);
+  const [foundBusinesses, setFoundBusinesses] = useState<BusinessType[]>([]);
   const [showSearchList, setShowSearchList] = useState(true);
   const [searchValue, setSearchValue] = useState("");
 
-  const { businesses } = useBusinessContext();
+  const businessContext = useBusinessContext();
+  if (!businessContext) return null;
 
-  const handleSearch = (e) => {
+  const { businesses } = businessContext
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const value = e.target.value.toLowerCase();
     setSearchValue(value);
     const foundBusinesses = businesses.filter((b) =>
@@ -51,7 +55,7 @@ export default function Search() {
           }
           label="Search"
           value={searchValue}
-          onChange={(e) => handleSearch(e)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSearch(e)}
         />
 
         {showSearchList &&

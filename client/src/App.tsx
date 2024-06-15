@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Container, ThemeProvider } from "@mui/material";
-import { theme } from "./themes/theme.js";
+import { theme } from "./themes/theme";
 import { BusinessProvider } from "./context/BusinessContext.jsx";
-import Header from "./components/Header/Header.jsx";
-import Main from "./pages/Main/Main.jsx";
-import BusinessDetail from "./pages/BusinessDetail/BusinessDetail.jsx";
-import PageNotFound from "./pages/PageNotFound/PageNotFound.js";
-import Footer from "./components/Footer/Footer.jsx";
+import Header from "./components/Header/Header";
+import Main from "./pages/Main/Main";
+import BusinessDetail from "./pages/BusinessDetail/BusinessDetail";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
+import Footer from "./components/Footer/Footer";
 import "./App.css";
 
 function App() {

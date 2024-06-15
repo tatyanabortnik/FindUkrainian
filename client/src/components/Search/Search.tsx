@@ -6,16 +6,20 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
-import { useBusinessContext } from "../../context/BusinessContext";
+import { useBusinessContext } from "../../context/BusinessContext.tsx";
 import SearchList from "../SearchList/SearchList.tsx";
 import "./style.css";
+import { BusinessType } from "../../Types/BusinessType.tsx";
 
 export default function Search() {
-  const [foundBusinesses, setFoundBusinesses] = useState([]);
+  const [foundBusinesses, setFoundBusinesses] = useState<BusinessType[]>([]);
   const [showSearchList, setShowSearchList] = useState(true);
   const [searchValue, setSearchValue] = useState("");
 
-  const { businesses } = useBusinessContext();
+  const businessContext = useBusinessContext();
+  if (!businessContext) return null;
+
+  const { businesses } = businessContext
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const value = e.target.value.toLowerCase();

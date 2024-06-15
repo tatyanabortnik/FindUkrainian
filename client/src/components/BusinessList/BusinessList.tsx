@@ -1,19 +1,23 @@
-import { useBusinessContext} from "../../context/BusinessContext.jsx";
-import { ALL } from '../../constants/categoriesConstants';
+import { useBusinessContext} from "../../context/BusinessContext.js";
+import { ALL } from '../../constants/categoriesConstants.jsx';
 import './style.css';
-import BusinessHandleButton from '../BusinessHandleButton/BusinessHandleButton';
+import BusinessHandleButton from '../BusinessHandleButton/BusinessHandleButton.jsx';
 
 export default function BusinessList() {
-  const { filteredBusinesses, categories } = useBusinessContext();
+  const businessContext =  useBusinessContext();
 
-  //TODO: review getAllCategories & getBusinessByCategory?
+  if (!businessContext) {
+    return null
+  }
+
+  const { filteredBusinesses, categories } = businessContext;
 
   return (
     <div className="business-list">
       {categories.map((c) => {
-        if (c.name.en === ALL) return null; //dont render all option /* TODO: REVIEW - ALL is hardcoded => get */
+        if (c.name.en === ALL) return null; 
 
-        //TODO: filteredBuisnesses? review duplications of code?
+        
         const businessesByCategory = filteredBusinesses.filter(
           (b) => b.category === c.name.en
         );

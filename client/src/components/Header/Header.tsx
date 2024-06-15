@@ -3,7 +3,7 @@ import './style.css';
 import Avatar from '@mui/material/Avatar';
 import { IconButton, Badge, Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import Search from '../Search/Search';
+import Search from '../Search/Search.tsx';
 import { Link } from 'react-router-dom';
 
 

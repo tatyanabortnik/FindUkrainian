@@ -21,7 +21,7 @@ export default function Header() {
       <div className="header__right">
         <Search />
 
-        {/* this works funny and sometimes doesnt load. To see return to original btn, comment out 'iframe' rule in style.css */}
+        {/* FIXME: this works funny and sometimes doesnt load. To see return to original btn, comment out 'iframe' rule in style.css */}
         <div id="google_translate_element" className="language"></div>
 
         <IconButton>

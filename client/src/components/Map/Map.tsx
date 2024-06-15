@@ -42,15 +42,6 @@ export default function Map() {
     [51.04, 7.085], // Northeast coordinates
   ];
 
-  //TODO: review if needed - if not, remove
-  // console.log('Map component is rendering');
-  // useEffect(() => {
-  //   console.log('Map component mounted');
-  //   return () => {
-  //     console.log('Map component unmounted');
-  //   };
-  // }, []);
-
   return (
     <MapContainer
       center={[50.94122163874258, 6.9585201430740256]}
@@ -66,7 +57,6 @@ export default function Map() {
 
       {filteredBusinesses.map((b) => {
         const isOpen = isOpenNow(b.openingHours);
-        // console.log(isOpenNow);
         return (
           <Marker
             key={b._id}

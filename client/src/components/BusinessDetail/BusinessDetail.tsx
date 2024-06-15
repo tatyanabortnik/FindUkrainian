@@ -1,5 +1,5 @@
 import { Avatar, Grid, Rating } from "@mui/material";
-import { useBusinessContext } from "../../context/BusinessContext.ts";
+import { useBusinessContext } from "../../context/BusinessContext.tsx";
 import { BusinessType } from "../../Types/BusinessType.ts";
 import getAmPm from "../../utils/getAmPm.ts";
 

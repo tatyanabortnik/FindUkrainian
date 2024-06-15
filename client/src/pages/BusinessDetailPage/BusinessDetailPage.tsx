@@ -1,14 +1,12 @@
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Avatar, Button, Grid, Rating } from "@mui/material";
-import { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
-import { BusinessContext, useBusinessContext } from "../../context/BusinessContext.jsx";
+import { useBusinessContext } from "../../context/BusinessContext.js";
 import "./style.css";
-import getAmPm from "../../utils/getAmPm";
+import getAmPm from "../../utils/getAmPm.js";
 
-//TODO: Rename to BusinessDetailPage
 
-export default function BusinessDetail() {
+export default function BusinessDetailPage() {
   const { id } = useParams();
   const { businesses } = useBusinessContext();
 

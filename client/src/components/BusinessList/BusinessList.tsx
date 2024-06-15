@@ -1,7 +1,7 @@
-import { useBusinessContext} from "../../context/BusinessContext.js";
-import { ALL } from '../../constants/categoriesConstants.jsx';
+import { useBusinessContext} from "../../context/BusinessContext";
+import { ALL } from '../../constants/categoriesConstants';
 import './style.css';
-import BusinessHandleButton from '../BusinessHandleButton/BusinessHandleButton.jsx';
+import BusinessHandleButton from '../BusinessHandleButton/BusinessHandleButton';
 
 export default function BusinessList() {
   const businessContext =  useBusinessContext();
@@ -28,7 +28,7 @@ export default function BusinessList() {
           <ul className="cat-container" key={c._id}>
             <h2 className="cat__title">{c.name.en}</h2>
             {businessesByCategory.map((b) => (
-              <BusinessHandleButton key={b._id} business={b} />
+              <BusinessHandleButton key={b._id} business={b} asLink={false} handleBusinessClick={function (): void {} } />
             ))}
           </ul>
         );

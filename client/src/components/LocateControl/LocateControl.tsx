@@ -8,15 +8,11 @@ import { useMap } from 'react-leaflet';
 const LocateControl = () => {
   const map = useMap();
 
-  // console.log('LocateControl component is rendering');
-
   useEffect(() => {
-    // console.log('LocateControl component mounted');
     const location = L.control.locate().addTo(map);
 
     return () => {
       map.removeControl(location);
-      // console.log('LocateControl component UNmounted');
     };
   }, [map]);
 

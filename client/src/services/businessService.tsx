@@ -1,11 +1,11 @@
 // import {baseUrl} from '../config.js'; //TODO: move to a config file / process.env
 // import { baseUrl } from "../../config";
-const baseUrl = 'http://localhost:3000'
+const baseUrl: string = 'http://localhost:3000'
 
-export const getBusinesses = () => getAtEndpoint('businesses');
-export const getCategories = () => getAtEndpoint('categories')
+export const getBusinesses = (): Promise<any> => getAtEndpoint('businesses');
+export const getCategories = (): Promise<any> => getAtEndpoint('categories')
 
-const getAtEndpoint = async (endpoint) => {
+const getAtEndpoint = async (endpoint: string): Promise<any> => {
 
   try {
     const res = await fetch(`${baseUrl}/${endpoint}`);
@@ -18,7 +18,7 @@ const getAtEndpoint = async (endpoint) => {
 
 
 
-export const getBusinessesByID = async (ID) => {
+export const getBusinessesByID = async (ID: string): Promise<any> => {
   try {
     const res = await fetch(baseUrl + `/businesses/${ID}`)
     const result = res.json();

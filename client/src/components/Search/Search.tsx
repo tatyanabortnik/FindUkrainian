@@ -6,10 +6,10 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
-import { useBusinessContext } from "../../context/BusinessContext.tsx";
-import SearchList from "../SearchList/SearchList.tsx";
+import { useBusinessContext } from "../../context/BusinessContext";
+import SearchList from "../SearchList/SearchList";
 import "./style.css";
-import { BusinessType } from "../../Types/BusinessType.tsx";
+import { BusinessType } from "../../Types/BusinessType";
 
 export default function Search() {
   const [foundBusinesses, setFoundBusinesses] = useState<BusinessType[]>([]);

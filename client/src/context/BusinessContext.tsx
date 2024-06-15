@@ -1,17 +1,34 @@
 import { useState , useEffect, createContext, useContext } from "react";
+import React from "react";
 import {
   getBusinesses,
   getCategories,
   getBusinessesByID,
 } from "../services/businessService";
+import { BusinessType } from "../Types/BusinessType.tsx";
+import { CategoryType } from "../Types/CategoryType.tsx";
 
-export const BusinessContext = createContext(null);
+interface BusinessContextProp {
+  businesses: BusinessType[];
+  setBusinesses: React.Dispatch<React.SetStateAction<BusinessType[]>>;
+  filteredBusinesses: BusinessType[];
+  setFilteredBusinesses: React.Dispatch<React.SetStateAction<BusinessType[]>>;
+  businessId: string | undefined;
+  setBusinessId: React.Dispatch<React.SetStateAction<string | undefined>>;
+  categories: CategoryType[];
+  setCategories: React.Dispatch<React.SetStateAction<CategoryType[]>>;
+  fetchBusinesses: () => Promise<void>;
+  fetchCategories: () => Promise<void>;
 
-export const BusinessProvider = ({ children }) => {
-  const [businesses, setBusinesses] = useState([]);
-  const [filteredBusinesses, setFilteredBusinesses] = useState([]);
-  const [businessId, setBusinessId] = useState();
-  const [categories, setCategories] = useState([]);
+}
+
+export const BusinessContext = createContext<BusinessContextProp | null > (null);
+
+export const BusinessProvider: React.FC<{ children: React.ReactNode }> = ({children}) => {
+  const [businesses, setBusinesses] = useState<BusinessType[]>([]);
+  const [filteredBusinesses, setFilteredBusinesses] = useState<BusinessType[]>([]);
+  const [businessId, setBusinessId] = useState<string | undefined>();
+  const [categories, setCategories] = useState<CategoryType[]>([]);
 
   const fetchBusinesses = async () => {
     try {

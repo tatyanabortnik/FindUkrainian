@@ -16,7 +16,7 @@ const LocateControl = () => {
     };
   }, [map]);
 
-  return;
+  return null;
 };
 
 export default LocateControl;

@@ -1,4 +1,32 @@
+// import { Theme } from '@emotion/react';
 import { createTheme } from '@mui/material';
+
+// declare module '@emotion/react' {
+//   interface Theme {
+//     palette: {
+//       primary: {
+//         light: string,
+//         main: string,
+//         dark: string,
+//         contrastText: string,
+//       };
+//       secondary: {
+//         light: string,
+//         main: string,
+//         dark: string,
+//         contrastText: string,
+//       }
+//     }
+//     typography: {
+//       fontFamily: string,
+//       fontWeightLight: number,
+//       fontWeightRegular: number,
+//       fontWeightMedium: number,
+//     },
+
+//   }
+// }
+
 
 export const theme = createTheme({
   palette: {

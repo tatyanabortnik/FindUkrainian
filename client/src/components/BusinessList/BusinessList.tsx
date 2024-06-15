@@ -1,7 +1,7 @@
-import { useBusinessContext} from "../../context/BusinessContext.js";
-import { ALL } from '../../constants/categoriesConstants.jsx';
+import { useBusinessContext} from "../../context/BusinessContext";
+import { ALL } from '../../constants/categoriesConstants';
 import './style.css';
-import BusinessHandleButton from '../BusinessHandleButton/BusinessHandleButton.jsx';
+import BusinessHandleButton from '../BusinessHandleButton/BusinessHandleButton';
 
 export default function BusinessList() {
   const businessContext =  useBusinessContext();

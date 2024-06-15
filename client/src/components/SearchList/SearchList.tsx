@@ -2,9 +2,16 @@
 import { List } from '@mui/material';
 import './style.css';
 import BusinessHandleButton from '../BusinessHandleButton/BusinessHandleButton';
-import { useTheme } from '@emotion/react';
+// import { useTheme } from '@emotion/react';
+import {useTheme} from '@mui/material'
+import { BusinessType } from '../../Types/BusinessType';
 
-export default function SearchList({ foundBusinesses, handleBusinessClick }) {
+interface businessProp {
+  foundBusinesses: BusinessType[];
+  handleBusinessClick: () => void;
+}
+
+export default function SearchList({ foundBusinesses, handleBusinessClick }: businessProp) {
   const { palette } = useTheme();
 
   return (

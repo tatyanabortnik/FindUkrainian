@@ -1,9 +1,6 @@
-interface OpenCloseHours {
-  open: number | null;
-  close: number | null;
-}
+import { BusinessType } from "../Types/BusinessType";
 
-export default function isOpen(openingHours: {[key: string]: OpenCloseHours}) {
+export default function isOpen(openingHours: BusinessType["openingHours"]): boolean {
   const now = new Date();
   const dayOfWeek = now.toLocaleString('en-us', { weekday: 'long' });
   const currentMinutes = now.getHours() * 60 + now.getMinutes();

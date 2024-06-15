@@ -1,4 +1,4 @@
-export default function getAmPm(minutes) {
+export default function getAmPm(minutes: number): string {
   const hours = Math.floor(minutes / 60);
   const mins = minutes % 60;
 

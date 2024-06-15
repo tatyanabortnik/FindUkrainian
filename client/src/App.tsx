@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Container, ThemeProvider } from "@mui/material";
 import { theme } from "./themes/theme";
-import { BusinessProvider } from "./context/BusinessContext.jsx";
+import { BusinessProvider } from "./context/BusinessContext";
 import Header from "./components/Header/Header";
 import Main from "./pages/Main/Main";
 import BusinessDetail from "./pages/BusinessDetail/BusinessDetail";

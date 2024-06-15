@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 import { useBusinessContext} from "../../context/BusinessContext";
 import { Button } from '@mui/material';
 import './style.css';
@@ -6,11 +6,17 @@ import { ALL } from '../../constants/categoriesConstants';
 
 
 export default function CategoryFilter() {
-  const { businesses, categories, setFilteredBusinesses } = useBusinessContext();
+
+  const businessContext =  useBusinessContext();
+
+  if (!businessContext) {
+    return null
+  }
+  const { businesses, categories, setFilteredBusinesses } = businessContext;
 
   const [selectedCategory, setSelectedCategory] = useState(ALL);
 
-  const handleCategory = (cat) => {
+  const handleCategory = (cat: SetStateAction<string>) => {
     setSelectedCategory(cat);
     setFilteredBusinesses(
       businesses.filter((b) => {

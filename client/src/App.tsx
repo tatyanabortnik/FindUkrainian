@@ -4,7 +4,7 @@ import { Container, ThemeProvider } from "@mui/material";
 import { theme } from "./themes/theme";
 import { BusinessProvider } from "./context/BusinessContext";
 import Header from "./components/Header/Header";
-import Main from "./pages/Main/Main";
+import Home from "./pages/Home/Home";
 import BusinessDetail from "./pages/BusinessDetail/BusinessDetail";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Footer from "./components/Footer/Footer";
@@ -24,7 +24,7 @@ function App() {
               <Header />
               <h1 className="title">Find 🇺🇦 services in Köln 🇩🇪</h1>
               <Routes>
-                <Route path={"/"} element={<Main />} />
+                <Route path={"/"} element={<Home />} />
                 <Route path={"/id/:id"} element={<BusinessDetail />} />
                 <Route path="*" element={<PageNotFound />} />
               </Routes>

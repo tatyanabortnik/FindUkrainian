@@ -3,13 +3,13 @@ import Categories from '../../components/CategoryFilter/CategoryFilter';
 import Map from '../../components/Map/Map';
 import './style.css';
 
-//TODO: rename this component to HomePage
 
-export default function Main() {
+
+export default function Home() {
   return (
-    <div id="main" className="main">
+    <div id="home" className="home">
       <Categories />
-      <section className="main__info">
+      <section className="home__info">
         <BusinessList />
         <Map />
       </section>

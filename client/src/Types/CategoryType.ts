@@ -1,4 +1,5 @@
 export interface CategoryType {
+  _id: string;
   name: LanguageType;
   description: LanguageType;
 }

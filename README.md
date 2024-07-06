@@ -7,9 +7,9 @@
 
 ## About The Project
 
-![FindUkrainian Screen Shot][product-screenshot]
-
 FindUkrainian is an SPA to locate Ukrainian businesses in Koln, Germany
+
+![FindUkrainian Screen Shot][product-screenshot]
 
 ### Built With
 

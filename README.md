@@ -5,22 +5,20 @@
     <img src="client/public/logo.png" alt="Logo" height="80">
   </a>
 
-<h3 align="center">FindUkrainian</h3>
-
 ## About The Project
 
 ![FindUkrainian Screen Shot][product-screenshot]
 
-An SPA to locate Ukrainian businesses in Koln, Germany
+FindUkrainian is an SPA to locate Ukrainian businesses in Koln, Germany
 
 ### Built With
 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)
-![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+[![React][React]][React_URL]
+[![React_Router][React_Router]][React_Router_URL]
+[![MongoDB][MongoDB]][MongoDB_URL]
+[![Expressjs][Expressjs]][Expressjs_URL]
+[![MUI][MUI]][MUI_URL]
+[![Figma][Figma]][Figma_URL]
 [![Prettier][Prettier]](https://prettier.io/)
 
 ### Prerequisites
@@ -98,3 +96,15 @@ Tetiana Bortnyk - tatyanabortnik@gmail.com
 
 [product-screenshot]: client/public/image-1.png
 [Prettier]: https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E
+[MongoDB]: https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white
+[MongoDB_URL]: https://www.mongodb.com/docs/
+[React]: https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB
+[React_URL]: https://react.dev/
+[React_Router]: https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white
+[React_Router_URL]: https://www.npmjs.com/package/react-router-dom
+[Expressjs]: https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB
+[Expressjs_URL]: https://expressjs.com/
+[MUI]: https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white
+[MUI_URL]: https://mui.com/
+[Figma]: https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white
+[Figma_URL]: https://www.figma.com/

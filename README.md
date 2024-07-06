@@ -4,6 +4,7 @@
   <a href="https://github.com/tatyanabortnik/FindUkrainian">
     <img src="client/public/logo.png" alt="Logo" height="80">
   </a>
+</div>
 
 ## About The Project
 

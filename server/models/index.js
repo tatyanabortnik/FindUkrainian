@@ -1,8 +1,9 @@
 require('dotenv').config()
-console.log(process.env)
+// console.log(process.env.NODE_ENV)
 
 const mongoose = require('mongoose')
 const dbName = 'find_ukrainian'
+
 const connectionString =
   process.env.NODE_ENV === 'prod'
     ? process.env.MONGODB_URI

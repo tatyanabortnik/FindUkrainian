@@ -1,7 +1,6 @@
-const baseUrl =
-  process.env.NODE_ENV === 'prod'
-    ? 'https://find-ukrainian.vercel.app'
-    : 'http://localhost:3000'
+const baseUrl = import.meta.env.VITE_APP_API_BASE_URL
+
+console.log(baseUrl)
 
 export const getBusinesses = () => {
   return fetch(baseUrl + '/businesses')

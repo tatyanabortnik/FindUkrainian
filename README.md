@@ -15,6 +15,7 @@ FindUkrainian is an SPA to locate Ukrainian businesses in Koln, Germany
 ### Built With
 
 [![React][React]][React_URL]
+[![Leaflet][Leaflet]][Leaflet_URL]
 [![React_Router][React_Router]][React_Router_URL]
 [![MongoDB][MongoDB]][MongoDB_URL]
 [![Expressjs][Expressjs]][Expressjs_URL]
@@ -97,6 +98,8 @@ Tetiana Bortnyk - tatyanabortnik@gmail.com
 
 [product-screenshot]: client/public/image-1.png
 [Prettier]: https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E
+[Leaflet]: https://a11ybadges.com/badge?logo=leaflet
+[Leaflet_URL]: https://leafletjs.com/
 [MongoDB]: https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white
 [MongoDB_URL]: https://www.mongodb.com/docs/
 [React]: https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB

@@ -1,13 +1,9 @@
 require('dotenv').config()
-// console.log(process.env.NODE_ENV)
 
 const mongoose = require('mongoose')
-const dbName = 'find_ukrainian'
-
-const connectionString =
-  process.env.NODE_ENV === 'prod'
-    ? process.env.MONGODB_URI
-    : 'mongodb://127.0.0.1:27017'
+const dbName = process.env.DB_NAME
+const connectionString = process.env.MONGODB_URI
+console.log(connectionString)
 
 async function connectDB() {
   try {

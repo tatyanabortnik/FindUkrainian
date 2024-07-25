@@ -28,54 +28,37 @@ FindUkrainian is an SPA to locate Ukrainian businesses in Koln, Germany
 - npm - ([Link](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm))
 - MongoDB [database](https://www.mongodb.com/docs/manual/administration/install-community/)
 
+You will need to install MongoDB to run this project.
+
+Server port is stated in the `server/index.js` file, defaults to 3000. If your server doesn't run on port 3000, you need to also specify it in `client/src/services/businessService.js` file.
+
 ### Installation:
 
-You will need Express server and MongoDB to run this project.
-
-Server port can be specified in the `server/index.js` file, defaults to 3000. If your server doesn't run on port 3000, you need to specify it in `client/src/services/businessService.js` file.
-
-MongoDB connection string is to be specified in `server/models/index.js` file.
-
-Install all dependencies. Server and client are two separate projects that need their respective packages to be installed via npm
-
-Dependencies for _server_:
+1. Install the dependencies for client and server side via npm:
 
 ```
 from the root directory:
 
-cd server
 npm i
+npm run install:all
 ```
 
-Dependencies for _client_:
+2. Create a .env file in server folder, then copy and paste the contents of .env.template file there.
 
-```
-from the root directory:
-
-cd client
-npm i
-```
-
-### run commands:
-
-To run the _server_ and seed it with mocked data:
+3. Seed the database:
 
 ```
 from the root directory:
 
-cd server
 npm run seed
-node run index.js
-
 ```
 
-To run the _client_:
+4. Start client and server in dev mode:
 
 ```
 from the root directory:
 
-cd client
-npm run dev
+npm run start:all
 ```
 
 ## Contributing

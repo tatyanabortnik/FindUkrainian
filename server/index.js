@@ -22,5 +22,3 @@ app.use((_req, res) => {
   await connectDB();
   app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 })();
-
-module.exports = app;

@@ -1,0 +1,28 @@
+{
+  "name": "findukrainian",
+  "version": "1.0.0",
+  "description": "<!-- PROJECT LOGO --> <br /> <div align=\"center\">   <a href=\"https://github.com/tatyanabortnik/FindUkrainian\">     <img src=\"client/public/logo.png\" alt=\"Logo\" height=\"80\">   </a> </div>",
+  "main": "index.js",
+  "scripts": {
+    "install:client": "cd client && npm install",
+    "install:server": "cd server && npm install",
+    "install:all": "npm run install:client && npm run install:server",
+    "seed": "cd server && node models/seed.js",
+    "start:server": "cd server && node index.js",
+    "start:client": "cd client && npm run dev",
+    "start:all": "concurrently \"npm run start:server\" \"npm run start:client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tatyanabortnik/FindUkrainian.git"
+  },
+  "author": "Tetiana Bortnyk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tatyanabortnik/FindUkrainian/issues"
+  },
+  "homepage": "https://github.com/tatyanabortnik/FindUkrainian#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -3,11 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "seed": "node models/seed.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {

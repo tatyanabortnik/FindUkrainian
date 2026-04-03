@@ -1,10 +1,31 @@
+/* ================================================
+   Footer — Apple-inspired minimal
+   ================================================ */
+
 .site-footer {
   text-align: center;
-  margin: 0.5em 0;
+  margin: 1.5em 0 1em;
+  padding-top: 1em;
+  border-top: 1px solid var(--border);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1em;
-  font-size: 0.8rem;
-  color: rgb(98, 96, 96);
+  gap: 0.5em;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.02em;
+}
+
+.site-footer .MuiIconButton-root {
+  color: var(--text-tertiary);
+  transition: all var(--transition-normal);
+}
+
+.site-footer .MuiIconButton-root:hover {
+  color: var(--text-primary);
+  transform: scale(1.08);
+}
+
+.copyright-text {
+  margin: 0;
 }

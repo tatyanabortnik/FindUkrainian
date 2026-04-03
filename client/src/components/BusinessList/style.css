@@ -1,41 +1,125 @@
+/* ================================================
+   Business List — Apple-inspired sidebar
+   ================================================ */
+
 .business-list {
   flex-basis: 35%;
-  overflow-y: scroll;
+  overflow-y: auto;
+  padding-right: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.12) transparent;
 }
 
 .cat-container {
+  margin-bottom: 0.5em;
 }
 
 .cat__title {
-  margin-bottom: 0.3em;
+  margin-bottom: 0.4em;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  padding-left: 8px;
 }
 
 .cat__item {
   display: flex;
-  gap: 0.6em;
-  margin-bottom: 1em;
-  align-items: flex-start;
+  gap: 0.85em;
+  align-items: center;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.cat__item:hover {
+  background-color: rgba(0, 87, 183, 0.04);
 }
 
 .cat__img {
   object-fit: cover;
-  border-radius: 10px;
-  width: 90px;
-  height: 70px;
+  border-radius: var(--radius-sm);
+  width: 72px;
+  height: 56px;
   flex-shrink: 0;
+  transition: transform var(--transition-normal);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.cat__item:hover .cat__img {
+  transform: scale(1.03);
 }
 
 .cat__text {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 2px;
   text-align: left;
+  min-width: 0;
 }
 
 .cat__text-title {
-  font-weight: 800;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cat__text-desc {
-  font-size: 0.8rem;
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .business-list {
+    flex-basis: auto;
+    max-height: 35vh;
+    min-height: 180px;
+    overflow-y: auto;
+    padding-right: 0;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5em;
+    margin-bottom: 0.25em;
+  }
+
+  .cat__img {
+    width: 60px;
+    height: 48px;
+  }
+
+  .cat__item {
+    padding: 6px;
+    gap: 0.65em;
+  }
+
+  .cat__text-title {
+    font-size: 0.84rem;
+  }
+
+  .cat__text-desc {
+    font-size: 0.74rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .business-list {
+    flex-basis: 40%;
+  }
+
+  .cat__img {
+    width: 68px;
+    height: 54px;
+  }
 }

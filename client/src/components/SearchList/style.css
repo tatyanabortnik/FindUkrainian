@@ -1,15 +1,38 @@
-.search-list {
-  position: absolute;
-  z-index: 9999;
-  max-height: 300px;
-  overflow-y: auto;
-  top: 40px;
-  border-radius: 5px;
-  border: 2px solid grey;
-  border-top: none;
+/* ================================================
+   Search dropdown — Apple-inspired panel
+   ================================================ */
 
-  width: 125% !important;
-  max-width: 360px !important;
+.search-list {
   position: absolute !important;
-  background-color: #fff;
+  z-index: 10000;
+  max-height: 320px;
+  overflow-y: auto;
+  top: 44px;
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+  width: 130% !important;
+  max-width: 380px !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  padding: 6px !important;
+}
+
+.search-list .business-btn {
+  border-radius: var(--radius-sm) !important;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .search-list {
+    width: calc(100vw - 32px) !important;
+    max-width: none !important;
+    left: 0;
+    right: 0;
+    position: fixed !important;
+    top: auto;
+    margin-top: 4px;
+    max-height: 50vh;
+  }
 }

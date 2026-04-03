@@ -1,5 +1,9 @@
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
-import { Avatar, Button, Grid, Rating } from '@mui/material'
+import AccessTimeIcon from '@mui/icons-material/AccessTime'
+import LanguageIcon from '@mui/icons-material/Language'
+import PhoneIcon from '@mui/icons-material/Phone'
+import LocationOnIcon from '@mui/icons-material/LocationOn'
+import { Avatar, Rating } from '@mui/material'
 import { useContext } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import BusinessContext from '../../context/BusinessContext'
@@ -13,107 +17,155 @@ export default function BusinessDetail() {
   const business = businesses.find((el) => el._id === id)
 
   return (
-    <>
-      <Button
-        className='detail-btn'
-        component={Link}
-        to={'/'}
-        variant='contained'
-        startIcon={<ArrowBackIcon />}
-      >
-        Back to map
-      </Button>
+    <div className='bd-page'>
+      <Link to='/' className='bd-back'>
+        <ArrowBackIcon sx={{ fontSize: 18 }} />
+        <span>Back</span>
+      </Link>
 
       {business && (
-        <div className='business-detail'>
-          <div className='business-detail__img'>
-            <img src={business.images[0]} alt={business.name} />
-            <h2 className='business-detail__title'>{business.name}</h2>
+        <>
+          {/* Hero */}
+          <div className='bd-hero'>
+            <img
+              className='bd-hero__img'
+              src={business.images[0]}
+              alt={business.name}
+            />
+            <div className='bd-hero__overlay' />
+            <div className='bd-hero__content'>
+              {business.category && (
+                <span className='bd-hero__category'>{business.category}</span>
+              )}
+              <h1 className='bd-hero__title'>{business.name}</h1>
+              {business.address && (
+                <p className='bd-hero__address'>
+                  <LocationOnIcon sx={{ fontSize: 16, opacity: 0.8 }} />
+                  {business.address}
+                </p>
+              )}
+            </div>
           </div>
 
-          <div className='business-detail__desc'>
-            <p>{business.longDescription}</p>
+          {/* Quick actions */}
+          <div className='bd-actions'>
+            {business.website && (
+              <a
+                href={business.website}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='bd-action-pill'
+              >
+                <LanguageIcon sx={{ fontSize: 18 }} />
+                <span>Website</span>
+              </a>
+            )}
+            {business.contactInfo && (
+              <a href={`tel:${business.contactInfo}`} className='bd-action-pill'>
+                <PhoneIcon sx={{ fontSize: 18 }} />
+                <span>{business.contactInfo}</span>
+              </a>
+            )}
           </div>
 
-          <div className='business-hours'>
-            <h2 className='business-hours__title'>Business hours</h2>
+          {/* About */}
+          <section className='bd-section bd-about'>
+            <h2 className='bd-section__heading'>About</h2>
+            <p className='bd-about__text'>{business.longDescription}</p>
+          </section>
 
-            <div className='business-hours__container'>
-              {Object.keys(business.openingHours).map((key, i) => (
-                <div key={i} className='business-hours__item'>
-                  <p className='item__day-name'>{key}</p>
-                  <p>
-                    {getAmPm(business.openingHours[key].open)} -
+          {/* Hours */}
+          <section className='bd-section bd-hours'>
+            <h2 className='bd-section__heading'>
+              <AccessTimeIcon sx={{ fontSize: 20, opacity: 0.5 }} />
+              Hours
+            </h2>
+            <div className='bd-hours__grid'>
+              {Object.keys(business.openingHours).map((key) => (
+                <div key={key} className='bd-hours__row'>
+                  <span className='bd-hours__day'>{key}</span>
+                  <span className='bd-hours__separator' />
+                  <span className='bd-hours__time'>
+                    {getAmPm(business.openingHours[key].open)} –{' '}
                     {getAmPm(business.openingHours[key].close)}
-                  </p>
+                  </span>
                 </div>
               ))}
             </div>
-          </div>
+          </section>
 
-          <div className='business-detail__reviews'>
-            <h2 className='reviews__title'>Reviews</h2>
+          {/* Reviews */}
+          <section className='bd-section bd-reviews'>
+            <h2 className='bd-section__heading'>Reviews</h2>
 
-            <div className='reviews__review'>
-              <Grid container wrap='nowrap' spacing={2}>
-                <Grid item>
-                  <Avatar alt='avatar'>RT</Avatar>
-                </Grid>
-                <Grid justifyContent='left' item xs zeroMinWidth>
-                  <Rating
-                    className='rating'
-                    name='read-only'
-                    value={4}
-                    readOnly
-                  />
-                  <h4 style={{ margin: 0, textAlign: 'left' }}>Regina Tan</h4>
-                  <p style={{ textAlign: 'left' }}>
-                    Never fails to impress! The service here is top-notch, with
-                    friendly staff always ready to assist you. Whether you're
-                    looking for a specific item or need help navigating the
-                    aisles, they're knowledgeable and eager to help. Plus, the
-                    checkout process is efficient, making for a seamless
-                    shopping experience. Highly recommended!{' '}
-                  </p>
-                  <p style={{ textAlign: 'left', color: 'gray' }}>
-                    posted 1 minute ago
-                  </p>
-                </Grid>
-              </Grid>
+            <div className='bd-review-card'>
+              <div className='bd-review__header'>
+                <Avatar
+                  sx={{
+                    width: 36,
+                    height: 36,
+                    fontSize: 14,
+                    bgcolor: '#0057b7',
+                  }}
+                >
+                  RT
+                </Avatar>
+                <div className='bd-review__meta'>
+                  <span className='bd-review__name'>Regina Tan</span>
+                  <span className='bd-review__date'>1 minute ago</span>
+                </div>
+                <Rating
+                  size='small'
+                  value={4}
+                  readOnly
+                  sx={{ ml: 'auto' }}
+                />
+              </div>
+              <p className='bd-review__body'>
+                Never fails to impress! The service here is top-notch, with
+                friendly staff always ready to assist you. Whether you're looking
+                for a specific item or need help navigating the aisles, they're
+                knowledgeable and eager to help. Plus, the checkout process is
+                efficient, making for a seamless shopping experience. Highly
+                recommended!
+              </p>
             </div>
-            <div className='reviews__review'>
-              <Grid container wrap='nowrap' spacing={2}>
-                <Grid item>
-                  <Avatar alt='avatar'>MM</Avatar>
-                </Grid>
-                <Grid justifyContent='left' item xs zeroMinWidth>
-                  <Rating
-                    className='rating'
-                    name='read-only'
-                    value={5}
-                    readOnly
-                  />
-                  <h4 style={{ margin: 0, textAlign: 'left' }}>
-                    Michel Michel
-                  </h4>
-                  <p style={{ textAlign: 'left' }}>
-                    Love shopping here! The service is exceptional – from the
-                    moment you walk in, you're greeted with smiles and helpful
-                    attitudes. The staff goes above and beyond to ensure you
-                    find everything you need, and they're quick to address any
-                    questions or concerns. Plus, the cleanliness and
-                    organization of the store make for a pleasant and
-                    stress-free shopping trip.{' '}
-                  </p>
-                  <p style={{ textAlign: 'left', color: 'gray' }}>
-                    posted 1 minute ago
-                  </p>
-                </Grid>
-              </Grid>
+
+            <div className='bd-review-card'>
+              <div className='bd-review__header'>
+                <Avatar
+                  sx={{
+                    width: 36,
+                    height: 36,
+                    fontSize: 14,
+                    bgcolor: '#0057b7',
+                  }}
+                >
+                  MM
+                </Avatar>
+                <div className='bd-review__meta'>
+                  <span className='bd-review__name'>Michel Michel</span>
+                  <span className='bd-review__date'>1 minute ago</span>
+                </div>
+                <Rating
+                  size='small'
+                  value={5}
+                  readOnly
+                  sx={{ ml: 'auto' }}
+                />
+              </div>
+              <p className='bd-review__body'>
+                Love shopping here! The service is exceptional – from the moment
+                you walk in, you're greeted with smiles and helpful attitudes.
+                The staff goes above and beyond to ensure you find everything you
+                need, and they're quick to address any questions or concerns.
+                Plus, the cleanliness and organization of the store make for a
+                pleasant and stress-free shopping trip.
+              </p>
             </div>
-          </div>
-        </div>
+          </section>
+        </>
       )}
-    </>
+    </div>
   )
 }

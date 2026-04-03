@@ -1,24 +1,47 @@
+/* ================================================
+   Header — Apple-inspired frosted nav
+   ================================================ */
+
 .header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid var(--primary);
-  padding: 0.5em 0;
   align-items: center;
+  padding: 0.6em 0;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background: rgba(250, 250, 250, 0.72);
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  margin: 0 -24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  transition: box-shadow var(--transition-normal),
+    background var(--transition-normal);
 }
 
 .header__right {
   display: flex;
-  gap: 1em;
+  gap: 6px;
   align-items: center;
 }
 
 .header__logo {
-  flex-basis: 10em;
+  flex-basis: 7em;
+  flex-shrink: 0;
+  transition: all var(--transition-normal);
+}
+
+.header__logo:hover {
+  opacity: 0.7;
+  transform: scale(0.97);
 }
 
 .styled-badge .MuiBadge-badge {
-  background-color: #44b700;
-  color: #44b700;
+  background-color: #34c759;
+  color: #34c759;
+  box-shadow: 0 0 0 2px var(--surface);
 }
 
 .styled-badge .MuiBadge-badge::after {
@@ -28,7 +51,7 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  animation: ripple 1.2s infinite ease-in-out;
+  animation: ripple 1.4s infinite ease-in-out;
   border: 1px solid currentColor;
   content: '';
 }
@@ -73,19 +96,42 @@ body {
 
 select.goog-te-combo {
   font-size: 0;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background-image: url('../../assets/globe.svg');
   border: none;
   appearance: none;
-  padding: 12px;
+  padding: 10px;
   cursor: pointer;
+  transition: background-color var(--transition-fast);
 }
 
 select.goog-te-combo:focus {
   outline: none;
 }
+
 select.goog-te-combo:hover {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .header {
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .header__logo {
+    flex-basis: 5.5em;
+  }
+
+  .header__right {
+    gap: 4px;
+  }
+
+  #google_translate_element {
+    display: none;
+  }
 }

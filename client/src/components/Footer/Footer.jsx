@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <p className="copyright-text">
-        Copyright &copy; 2024 All Rights Reserved.
+        Copyright &copy; {new Date().getFullYear()} All Rights Reserved.
       </p>
 
       <ul className="social-icons">

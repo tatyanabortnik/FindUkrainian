@@ -1,3 +1,49 @@
+/* ================================================
+   Search — Apple-inspired input
+   ================================================ */
+
 .search-form {
   position: relative;
+}
+
+.search-form .MuiOutlinedInput-root {
+  font-size: 0.86rem;
+  height: 36px;
+  border-radius: 100px !important;
+  background: rgba(0, 0, 0, 0.04);
+  transition: all var(--transition-normal);
+}
+
+.search-form .MuiOutlinedInput-root fieldset {
+  border-color: transparent !important;
+}
+
+.search-form .MuiOutlinedInput-root:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.search-form .MuiOutlinedInput-root.Mui-focused {
+  background: var(--surface-elevated);
+  box-shadow: 0 0 0 3px rgba(0, 87, 183, 0.12);
+}
+
+.search-form .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: rgba(0, 87, 183, 0.3) !important;
+  border-width: 1px !important;
+}
+
+.search-form .MuiInputLabel-root {
+  font-size: 0.86rem;
+}
+
+@media (max-width: 767px) {
+  .search-form {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .search-form .MuiOutlinedInput-root {
+    font-size: 0.82rem;
+    height: 34px;
+  }
 }

@@ -1,9 +1,51 @@
-.title {
-  padding: 0.5em 0 !important;
+/* ================================================
+   Main page layout — Apple-inspired
+   ================================================ */
+
+.main {
+  animation: mainReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+@keyframes mainReveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .main__info {
   display: flex;
-  gap: 1em;
-  height: 58vh; /* ??? */
+  gap: 1.25em;
+  height: 64vh;
+  min-height: 420px;
+  animation: sectionSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+
+@keyframes sectionSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .main__info {
+    height: 56vh;
+  }
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 767px) {
+  .main__info {
+    flex-direction: column;
+    height: auto;
+    gap: 0.75em;
+  }
 }

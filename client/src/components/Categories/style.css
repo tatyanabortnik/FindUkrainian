@@ -1,5 +1,72 @@
+/* ================================================
+   Categories — Apple-inspired filter chips
+   ================================================ */
+
 .categories {
   display: flex;
-  gap: 0.5em;
+  gap: 8px;
   padding-bottom: 1em;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  animation: catsReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+@keyframes catsReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.categories::-webkit-scrollbar {
+  display: none;
+}
+
+/* Override MUI button styles for pill look */
+.categories .MuiButton-root {
+  border-radius: 100px !important;
+  font-size: 0.82rem !important;
+  font-weight: 500 !important;
+  padding: 6px 18px !important;
+  min-width: auto !important;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  transition: all var(--transition-normal) !important;
+}
+
+.categories .MuiButton-outlined {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: var(--text-secondary) !important;
+  background: var(--surface-elevated) !important;
+}
+
+.categories .MuiButton-outlined:hover {
+  background: rgba(0, 87, 183, 0.05) !important;
+  border-color: rgba(0, 87, 183, 0.2) !important;
+  color: #0057b7 !important;
+}
+
+.categories .MuiButton-contained {
+  box-shadow: 0 2px 8px rgba(0, 87, 183, 0.2) !important;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .categories {
+    margin: 0 -16px;
+    padding: 0 16px 0.75em;
+    flex-wrap: nowrap;
+  }
+
+  .categories .MuiButton-root {
+    flex-shrink: 0;
+    font-size: 0.78rem !important;
+    padding: 5px 14px !important;
+  }
 }

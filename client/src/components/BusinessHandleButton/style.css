@@ -1,11 +1,18 @@
+/* ================================================
+   Business button — Apple-inspired list item
+   ================================================ */
+
 .business-btn {
   text-transform: none !important;
   color: var(--text-primary) !important;
   line-height: 1.3 !important;
-  border-radius: var(--radius-sm) !important;
-  transition: all var(--transition-fast) !important;
+  border-radius: var(--radius-md) !important;
+  transition: all var(--transition-normal) !important;
+  width: 100%;
+  justify-content: flex-start !important;
+  padding: 2px !important;
 }
 
 .business-btn:hover {
-  background-color: rgba(0, 87, 183, 0.04) !important;
+  background-color: transparent !important;
 }

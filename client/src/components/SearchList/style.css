@@ -1,18 +1,27 @@
+/* ================================================
+   Search dropdown — Apple-inspired panel
+   ================================================ */
+
 .search-list {
-  position: absolute;
-  z-index: 10000;
-  max-height: 300px;
-  overflow-y: auto;
-  top: 42px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-lg);
-  width: 125% !important;
-  max-width: 360px !important;
   position: absolute !important;
-  background-color: var(--surface-elevated);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  z-index: 10000;
+  max-height: 320px;
+  overflow-y: auto;
+  top: 44px;
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+  width: 130% !important;
+  max-width: 380px !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  padding: 6px !important;
+}
+
+.search-list .business-btn {
+  border-radius: var(--radius-sm) !important;
+  width: 100%;
 }
 
 @media (max-width: 767px) {

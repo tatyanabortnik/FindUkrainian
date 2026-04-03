@@ -1,55 +1,124 @@
 .detail-btn {
-  margin: 0 0 2em 0 !important;
+  margin: 0 0 1.5em 0 !important;
+  font-size: 0.88rem !important;
 }
 
 .business-detail {
   display: flex;
   flex-direction: column;
   gap: 2em;
+  padding-bottom: 2em;
 }
 
 .business-detail__desc {
-  width: 80%;
-  max-width: 750px;
+  width: 100%;
+  max-width: 680px;
   text-align: left;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
 }
 
 .business-detail__img img {
   object-fit: cover;
-  border-radius: 10px;
-  height: 300px;
+  border-radius: var(--radius-lg);
+  height: clamp(200px, 35vw, 360px);
   width: 100%;
 }
 
 .business-detail__img {
   position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
 }
 
 .business-detail__title {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5em 1em 0.75em;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
   color: #fff;
-  text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000,
-    1px -1px 0 #000;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  text-shadow: none;
 }
 
 .business-detail__reviews,
 .business-hours {
   display: flex;
   flex-direction: column;
-  gap: 1.5em;
+  gap: 1.25em;
+}
+
+.business-hours__title,
+.reviews__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.business-hours__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.business-hours__item {
+  display: flex;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding: 0.25em 0;
+}
+
+.item__day-name {
+  flex-basis: 7em;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: var(--text-primary);
 }
 
 .rating {
   width: 100px !important;
 }
 
-.business-hours__item {
-  display: flex;
+.reviews__review {
+  padding: 1em;
+  border-radius: var(--radius-md);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  transition: box-shadow var(--transition-fast);
 }
-.item__day-name {
-  flex-basis: 7em;
-  text-transform: capitalize;
+
+.reviews__review:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .business-detail {
+    gap: 1.5em;
+  }
+
+  .business-detail__desc {
+    width: 100%;
+    font-size: 0.92rem;
+  }
+
+  .business-detail__title {
+    font-size: 1.15rem;
+    padding: 1em 0.75em 0.5em;
+  }
+
+  .item__day-name {
+    flex-basis: 5.5em;
+    font-size: 0.85rem;
+  }
+
+  .business-hours__item {
+    font-size: 0.85rem;
+  }
 }

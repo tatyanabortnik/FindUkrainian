@@ -1,19 +1,35 @@
 .header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid var(--primary);
-  padding: 0.5em 0;
+  border-bottom: 1px solid var(--border);
+  padding: 0.6em 0;
   align-items: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(250, 250, 250, 0.85);
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  margin: 0 -24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  transition: box-shadow var(--transition-normal);
 }
 
 .header__right {
   display: flex;
-  gap: 1em;
+  gap: 0.5em;
   align-items: center;
 }
 
 .header__logo {
-  flex-basis: 10em;
+  flex-basis: 7em;
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.header__logo:hover {
+  opacity: 0.7;
 }
 
 .styled-badge .MuiBadge-badge {
@@ -73,19 +89,41 @@ body {
 
 select.goog-te-combo {
   font-size: 0;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background-image: url('../../assets/globe.svg');
   border: none;
   appearance: none;
-  padding: 12px;
+  padding: 10px;
   cursor: pointer;
+  transition: background-color var(--transition-fast);
 }
 
 select.goog-te-combo:focus {
   outline: none;
 }
 select.goog-te-combo:hover {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+/* Mobile: hide translate, shrink logo */
+@media (max-width: 767px) {
+  .header {
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .header__logo {
+    flex-basis: 5.5em;
+  }
+
+  .header__right {
+    gap: 0.3em;
+  }
+
+  #google_translate_element {
+    display: none;
+  }
 }

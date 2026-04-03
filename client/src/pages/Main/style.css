@@ -1,9 +1,22 @@
-.title {
-  padding: 0.5em 0 !important;
-}
-
 .main__info {
   display: flex;
   gap: 1em;
-  height: 58vh; /* ??? */
+  height: 62vh;
+  min-height: 400px;
+}
+
+/* Tablet: slightly adjust proportions */
+@media (max-width: 1024px) {
+  .main__info {
+    height: 55vh;
+  }
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 767px) {
+  .main__info {
+    flex-direction: column;
+    height: auto;
+    gap: 0.75em;
+  }
 }

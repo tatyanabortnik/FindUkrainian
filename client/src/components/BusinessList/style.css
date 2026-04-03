@@ -1,6 +1,7 @@
 .business-list {
   flex-basis: 35%;
-  overflow-y: scroll;
+  overflow-y: auto;
+  padding-right: 0.5em;
 }
 
 .cat-container {
@@ -8,34 +9,85 @@
 
 .cat__title {
   margin-bottom: 0.3em;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
 }
 
 .cat__item {
   display: flex;
-  gap: 0.6em;
-  margin-bottom: 1em;
+  gap: 0.75em;
+  margin-bottom: 0.5em;
   align-items: flex-start;
+  padding: 0.5em;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.cat__item:hover {
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .cat__img {
   object-fit: cover;
-  border-radius: 10px;
-  width: 90px;
-  height: 70px;
+  border-radius: var(--radius-sm);
+  width: 80px;
+  height: 64px;
   flex-shrink: 0;
 }
 
 .cat__text {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 0.3em;
   text-align: left;
 }
 
 .cat__text-title {
-  font-weight: 800;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
 }
 
 .cat__text-desc {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Mobile: full width, horizontal scroll or limited height */
+@media (max-width: 767px) {
+  .business-list {
+    flex-basis: auto;
+    max-height: 35vh;
+    min-height: 180px;
+    overflow-y: auto;
+    padding-right: 0;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5em;
+    margin-bottom: 0.25em;
+  }
+
+  .cat__img {
+    width: 64px;
+    height: 52px;
+  }
+
+  .cat__item {
+    padding: 0.4em;
+    gap: 0.6em;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .business-list {
+    flex-basis: 40%;
+  }
+
+  .cat__img {
+    width: 72px;
+    height: 58px;
+  }
 }

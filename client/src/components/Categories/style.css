@@ -1,5 +1,28 @@
 .categories {
   display: flex;
   gap: 0.5em;
-  padding-bottom: 1em;
+  padding-bottom: 0.75em;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.categories::-webkit-scrollbar {
+  display: none;
+}
+
+/* On mobile, allow horizontal scroll without wrapping */
+@media (max-width: 767px) {
+  .categories {
+    margin: 0 -16px;
+    padding: 0 16px 0.75em;
+    flex-wrap: nowrap;
+  }
+
+  .categories .MuiButton-root {
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    padding: 4px 14px;
+  }
 }

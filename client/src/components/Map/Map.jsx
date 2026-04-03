@@ -7,6 +7,8 @@ import { Icon } from 'leaflet'
 import LocateControl from '../LocateControl/LocateControl'
 import isOpenNow from '../../utils/isOpen'
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward'
+import LocationOnIcon from '@mui/icons-material/LocationOn'
+import PhoneIcon from '@mui/icons-material/Phone'
 import { Button } from '@mui/material'
 import { Link } from 'react-router-dom'
 
@@ -58,25 +60,58 @@ export default function Map() {
             ref={(markerDomEL) => (markerRefs.current[b._id] = markerDomEL)}
           >
             <Popup className='popup'>
-              <div>
-                <img className='popup__img' src={b.images[0]} alt={b.name} />
-                <h4>{b.name}</h4>
-                <span>{b.category}</span>
-                <p className={isOpen ? 'open' : 'closed'}>
-                  {isOpen ? 'Open now' : 'Closed now'}
-                </p>
-                <p>{b.contactInfo}</p>
-                <p>{b.address}</p>
+              <div className='popup-card'>
+                {/* Hero image with overlay */}
+                <div className='popup-card__hero'>
+                  <img
+                    className='popup-card__img'
+                    src={b.images[0]}
+                    alt={b.name}
+                  />
+                  <div className='popup-card__hero-overlay' />
+                  <span
+                    className={`popup-card__status ${isOpen ? 'popup-card__status--open' : 'popup-card__status--closed'}`}
+                  >
+                    <span className='popup-card__status-dot' />
+                    {isOpen ? 'Open' : 'Closed'}
+                  </span>
+                  <span className='popup-card__category'>{b.category}</span>
+                </div>
+
+                {/* Content */}
+                <div className='popup-card__body'>
+                  <h4 className='popup-card__name'>{b.name}</h4>
+
+                  <div className='popup-card__info'>
+                    {b.address && (
+                      <div className='popup-card__info-row'>
+                        <LocationOnIcon
+                          sx={{ fontSize: 14, color: 'var(--text-tertiary)' }}
+                        />
+                        <span>{b.address}</span>
+                      </div>
+                    )}
+                    {b.contactInfo && (
+                      <div className='popup-card__info-row'>
+                        <PhoneIcon
+                          sx={{ fontSize: 14, color: 'var(--text-tertiary)' }}
+                        />
+                        <span>{b.contactInfo}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <Button
+                    className='popup-card__btn'
+                    component={Link}
+                    to={'/id/' + b._id}
+                    variant='contained'
+                    endIcon={<ArrowOutwardIcon sx={{ fontSize: '14px !important' }} />}
+                  >
+                    View details
+                  </Button>
+                </div>
               </div>
-              <Button
-                className='popup__btn'
-                component={Link}
-                to={'/id/' + b._id}
-                variant='contained'
-                endIcon={<ArrowOutwardIcon />}
-              >
-                Details
-              </Button>
             </Popup>
           </Marker>
         )
